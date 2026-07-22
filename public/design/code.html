@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Flight Booking - SkyWings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#1d4ed8",
+                        "secondary-container": "#64a8fe",
+                        "outline": "#747686",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "surface-container-highest": "#dae2fd",
+                        "on-background": "#131b2e",
+                        "secondary-fixed": "#d4e3ff",
+                        "on-tertiary-container": "#cdd6db",
+                        "surface-container-high": "#e2e7ff",
+                        "on-surface-variant": "#434655",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#faf8ff",
+                        "tertiary-fixed-dim": "#bfc8ce",
+                        "on-primary-fixed": "#001551",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c4c5d7",
+                        "background": "#faf8ff",
+                        "secondary": "#0060ac",
+                        "tertiary-fixed": "#dbe4ea",
+                        "on-secondary-container": "#003c70",
+                        "on-tertiary-fixed": "#141d21",
+                        "inverse-on-surface": "#eef0ff",
+                        "surface-container-low": "#f2f3ff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "surface-variant": "#dae2fd",
+                        "tertiary": "#3d454a",
+                        "on-tertiary-fixed-variant": "#3f484d",
+                        "surface": "#faf8ff",
+                        "surface-container": "#eaedff",
+                        "primary": "#0037b0",
+                        "inverse-surface": "#283044",
+                        "on-surface": "#131b2e",
+                        "tertiary-container": "#545d62",
+                        "on-secondary-fixed": "#001c39",
+                        "on-primary-container": "#cad3ff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#b7c4ff",
+                        "primary-fixed": "#dce1ff",
+                        "surface-tint": "#2151da",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#a4c9ff",
+                        "surface-dim": "#d2d9f4",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#004883"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-padding-mobile": "20px",
+                        "gutter": "16px",
+                        "section-gap": "48px",
+                        "container-padding-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #faf8ff; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(0, 55, 176, 0.1); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen pb-safe pb-24 md:pb-0 pt-16 md:pt-20">
+<!-- Top Navigation (Desktop) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm hidden md:flex justify-between items-center px-container-padding-desktop h-20 transition-all duration-300" id="desktop-nav">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">flight_takeoff</span>
+<span class="font-display-lg text-headline-md font-extrabold tracking-tight text-primary">SkyWings</span>
+</div>
+<nav class="flex gap-8">
+<a class="text-primary font-label-md flex items-center gap-2 hover:bg-primary-container/10 px-3 py-2 rounded-lg transition-colors" href="#"><span class="material-symbols-outlined text-sm">explore</span> Explore</a>
+<a class="text-on-surface-variant font-label-md flex items-center gap-2 hover:bg-primary-container/10 px-3 py-2 rounded-lg transition-colors" href="#"><span class="material-symbols-outlined text-sm">confirmation_number</span> Bookings</a>
+<a class="text-on-surface-variant font-label-md flex items-center gap-2 hover:bg-primary-container/10 px-3 py-2 rounded-lg transition-colors" href="#"><span class="material-symbols-outlined text-sm">favorite</span> Saved</a>
+<a class="text-on-surface-variant font-label-md flex items-center gap-2 hover:bg-primary-container/10 px-3 py-2 rounded-lg transition-colors" href="#"><span class="material-symbols-outlined text-sm">person</span> Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-primary-container/10 p-2 rounded-full transition-colors"><span class="material-symbols-outlined">search</span></button>
+<button class="bg-primary text-on-primary font-label-md px-6 py-2 rounded-full hover:shadow-lg transition-shadow">My Trip</button>
+</div>
+</header>
+<!-- Top Navigation (Mobile) -->
+<header class="fixed top-0 left-0 w-full flex justify-between items-center px-container-padding-mobile h-16 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm md:hidden z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">flight_takeoff</span>
+<span class="font-display-lg text-headline-md font-extrabold tracking-tight text-primary">SkyWings</span>
+</div>
+<button class="text-on-surface-variant p-2"><span class="material-symbols-outlined">menu</span></button>
+</header>
+<main class="max-w-7xl mx-auto px-container-padding-mobile md:px-container-padding-desktop py-8 md:py-12">
+<!-- Header Section -->
+<div class="mb-section-gap flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-2 text-on-surface-variant mb-2">
+<span class="font-label-sm uppercase tracking-widest text-secondary">Review Itinerary</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="font-label-sm uppercase tracking-widest">Payment</span>
+</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-on-background">Complete your booking</h1>
+<p class="font-body-md text-on-surface-variant mt-2">Almost there! Review your flight details and proceed to payment.</p>
+</div>
+<div class="text-left md:text-right">
+<p class="font-label-sm text-on-surface-variant uppercase tracking-widest mb-1">Total Price</p>
+<p class="font-display-lg text-headline-lg text-primary">$1,245.00 <span class="font-body-md text-on-surface-variant">USD</span></p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Main Content Area (Left Col) -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Flight Summary Card -->
+<section class="glass-card rounded-xl p-6 md:p-8">
+<div class="flex justify-between items-center mb-6 border-b border-outline-variant/20 pb-4">
+<h2 class="font-headline-md text-on-background flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">flight</span> Outbound Flight
+                        </h2>
+<span class="bg-surface-container-high text-primary font-label-sm px-3 py-1 rounded-full">Business Class</span>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 relative">
+<!-- Origin -->
+<div class="text-center md:text-left flex-1">
+<p class="font-display-lg text-headline-lg text-on-background">JFK</p>
+<p class="font-body-md text-on-surface-variant">New York City</p>
+<p class="font-label-md text-on-background mt-2">10:30 AM</p>
+<p class="font-body-md text-on-surface-variant text-sm">Mon, Oct 24</p>
+</div>
+<!-- Flight Path Graphic -->
+<div class="flex-1 flex flex-col items-center justify-center relative w-full md:w-auto px-4">
+<p class="font-label-sm text-on-surface-variant mb-2 bg-surface px-2 rounded-full z-10">7h 45m • Direct</p>
+<div class="w-full h-px border-t-2 border-dashed border-outline-variant absolute top-1/2 left-0 -translate-y-1/2"></div>
+<span class="material-symbols-outlined text-primary bg-surface p-1 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform rotate-90 md:rotate-0">flight</span>
+</div>
+<!-- Destination -->
+<div class="text-center md:text-right flex-1">
+<p class="font-display-lg text-headline-lg text-on-background">LHR</p>
+<p class="font-body-md text-on-surface-variant">London</p>
+<p class="font-label-md text-on-background mt-2">10:15 PM</p>
+<p class="font-body-md text-on-surface-variant text-sm">Mon, Oct 24</p>
+</div>
+</div>
+<div class="mt-8 bg-surface-container-low rounded-lg p-4 flex flex-wrap gap-6 justify-between items-center">
+<div class="flex items-center gap-3">
+<img alt="Airline Logo" class="w-8 h-8 object-contain rounded-full bg-white shadow-sm" data-alt="Logo of a premium airline company, minimalist blue and white design, corporate modernism style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUrGPiT-GsRJ_hL0h1Btqoe5FapK9DXkEWw_YAPPPsb1td-XlGN3hrzQVmhYMMrHozaIRqym5TQciy_mMUS7u-683F7E5gdaE1cBL3z7qlu6VAxA1k1JUSBs5mCrWxDxgr7gnkqDHvGrbKMuLQmQRthPVVFBsyCxW9b18AMgRNJpkryVAzgzxW90BP5_8ot951IxfBSxc3gpMByA9m71-kzrXRDUgRSDUbN0WxFM0IqgdQl3GtKAb2"/>
+<div>
+<p class="font-label-md text-on-background">SkyWings Airways</p>
+<p class="font-body-md text-on-surface-variant text-sm">Flight SW-402 • Boeing 787</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex items-center gap-1 text-on-surface-variant" title="Carry-on included">
+<span class="material-symbols-outlined text-sm">luggage</span>
+<span class="font-label-sm">1x 8kg</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant" title="Checked bag included">
+<span class="material-symbols-outlined text-sm">work</span>
+<span class="font-label-sm">2x 23kg</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant" title="In-flight meal">
+<span class="material-symbols-outlined text-sm">restaurant</span>
+<span class="font-label-sm">Included</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Return Flight Summary Card (Optional/Simulated) -->
+<section class="glass-card rounded-xl p-6 md:p-8 opacity-90">
+<div class="flex justify-between items-center mb-6 border-b border-outline-variant/20 pb-4">
+<h2 class="font-headline-md text-on-background flex items-center gap-2">
+<span class="material-symbols-outlined text-primary transform rotate-180">flight</span> Return Flight
+                        </h2>
+<span class="bg-surface-container-high text-primary font-label-sm px-3 py-1 rounded-full">Business Class</span>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 relative">
+<!-- Origin -->
+<div class="text-center md:text-left flex-1">
+<p class="font-display-lg text-headline-lg text-on-background">LHR</p>
+<p class="font-body-md text-on-surface-variant">London</p>
+<p class="font-label-md text-on-background mt-2">08:00 AM</p>
+<p class="font-body-md text-on-surface-variant text-sm">Mon, Nov 07</p>
+</div>
+<!-- Flight Path Graphic -->
+<div class="flex-1 flex flex-col items-center justify-center relative w-full md:w-auto px-4">
+<p class="font-label-sm text-on-surface-variant mb-2 bg-surface px-2 rounded-full z-10">8h 15m • Direct</p>
+<div class="w-full h-px border-t-2 border-dashed border-outline-variant absolute top-1/2 left-0 -translate-y-1/2"></div>
+<span class="material-symbols-outlined text-primary bg-surface p-1 rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform -rotate-90 md:rotate-180">flight</span>
+</div>
+<!-- Destination -->
+<div class="text-center md:text-right flex-1">
+<p class="font-display-lg text-headline-lg text-on-background">JFK</p>
+<p class="font-body-md text-on-surface-variant">New York City</p>
+<p class="font-label-md text-on-background mt-2">11:15 AM</p>
+<p class="font-body-md text-on-surface-variant text-sm">Mon, Nov 07</p>
+</div>
+</div>
+</section>
+<!-- Passenger Details Form -->
+<section class="bg-white rounded-xl p-6 md:p-8 shadow-sm border border-outline-variant/20">
+<h3 class="font-headline-md text-on-background mb-6">Passenger Details</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block font-label-md text-on-surface-variant mb-2">First Name</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-md" placeholder="e.g. John" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-on-surface-variant mb-2">Last Name</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-md" placeholder="e.g. Doe" type="text"/>
+</div>
+<div class="md:col-span-2">
+<label class="block font-label-md text-on-surface-variant mb-2">Email Address</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-md" placeholder="john.doe@example.com" type="email"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar (Right Col) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Price Breakdown -->
+<div class="glass-card rounded-xl p-6 sticky top-28">
+<h3 class="font-headline-md text-on-background mb-6">Price Summary</h3>
+<div class="space-y-4 mb-6 border-b border-outline-variant/20 pb-6">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">1x Adult Ticket</span>
+<span class="font-label-md text-on-background">$950.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">Taxes &amp; Fees</span>
+<span class="font-label-md text-on-background">$145.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">Business Class Upgrade</span>
+<span class="font-label-md text-on-background">$150.00</span>
+</div>
+</div>
+<div class="flex justify-between items-end mb-8">
+<div>
+<p class="font-headline-md text-on-background font-bold">Total</p>
+<p class="font-label-sm text-on-surface-variant">Includes all taxes</p>
+</div>
+<p class="font-display-lg text-headline-lg text-primary">$1,245.00</p>
+</div>
+<button class="w-full bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-md py-4 rounded-full shadow-md hover:shadow-lg transition-all flex justify-center items-center gap-2 group">
+                        Continue to Payment
+                        <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<p class="text-center font-body-md text-on-surface-variant text-sm mt-4 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm">lock</span> Secure 256-bit SSL encryption
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface/90 dark:bg-inverse-surface/90 backdrop-blur-2xl border-t border-outline-variant/20 shadow-lg md:hidden rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline w-16 h-full" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">explore</span>
+<span class="font-label-sm text-[10px]">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-primary-container/20 rounded-full px-4 py-1" href="#">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+<span class="font-label-sm text-[10px]">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline w-16 h-full" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">favorite</span>
+<span class="font-label-sm text-[10px]">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline w-16 h-full" href="#">
+<span class="material-symbols-outlined text-2xl mb-1">person</span>
+<span class="font-label-sm text-[10px]">Profile</span>
+</a>
+</nav>
+</body></html>

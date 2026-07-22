@@ -188,20 +188,18 @@ export default function ScrollSequence({
               style={{ opacity: text1Opacity, y: text1Y }}
               className="absolute inset-0 flex flex-col items-center justify-center"
             >
-              <span className="px-4 py-1.5 rounded-full bg-[#030712]/60 backdrop-blur-md border border-[#38BDF8]/40 text-[#38BDF8] text-xs font-bold uppercase tracking-widest mb-4 shadow-lg">
+              <span className="px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-widest mb-4 shadow-lg">
                 Elevate Your View
               </span>
-              <h2 className="font-serif text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-4 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+              <h2 className="font-sans text-[32px] leading-tight md:text-5xl font-extrabold text-white tracking-tight mb-4 drop-shadow-xl">
                 Look Beyond The Horizon
               </h2>
-              <p className="text-white/95 text-base md:text-xl max-w-xl mx-auto font-light drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+              <p className="text-white/90 text-base md:text-xl max-w-xl mx-auto font-medium drop-shadow-md">
                 Scroll down to embark on a journey across the skies to your next dream destination.
               </p>
-              <div className="mt-8 flex flex-col items-center gap-2 text-[#38BDF8] text-xs font-bold tracking-widest animate-bounce drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+              <div className="mt-8 flex flex-col items-center gap-2 text-white/80 text-xs font-bold tracking-widest animate-bounce drop-shadow-md">
                 <span>SCROLL TO EXPLORE</span>
-                <svg className="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
+                <span className="material-symbols-outlined text-2xl">keyboard_arrow_down</span>
               </div>
             </motion.div>
 
@@ -210,13 +208,13 @@ export default function ScrollSequence({
               style={{ opacity: text2Opacity, y: text2Y }}
               className="absolute inset-0 flex flex-col items-center justify-center"
             >
-              <span className="px-4 py-1.5 rounded-full bg-[#030712]/60 backdrop-blur-md border border-[#38BDF8]/40 text-[#38BDF8] text-xs font-bold uppercase tracking-widest mb-4 shadow-lg">
+              <span className="px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-widest mb-4 shadow-lg">
                 World-Class Travel
               </span>
-              <h2 className="font-serif text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-4 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+              <h2 className="font-sans text-[32px] leading-tight md:text-5xl font-extrabold text-white tracking-tight mb-4 drop-shadow-xl">
                 500+ Global Destinations
               </h2>
-              <p className="text-white/95 text-base md:text-xl max-w-xl mx-auto font-light drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+              <p className="text-white/90 text-base md:text-xl max-w-xl mx-auto font-medium drop-shadow-md">
                 Seamless flight bookings, exclusive business class deals, and 24/7 concierge support.
               </p>
             </motion.div>
@@ -226,13 +224,13 @@ export default function ScrollSequence({
               style={{ opacity: text3Opacity, y: text3Y }}
               className="absolute inset-0 flex flex-col items-center justify-center"
             >
-              <span className="px-4 py-1.5 rounded-full bg-[#030712]/60 backdrop-blur-md border border-[#38BDF8]/40 text-[#38BDF8] text-xs font-bold uppercase tracking-widest mb-4 shadow-lg">
+              <span className="px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold uppercase tracking-widest mb-4 shadow-lg">
                 Welcome To SkyWings
               </span>
-              <h2 className="font-serif text-4xl md:text-6xl font-bold text-white tracking-tight leading-tight mb-4 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+              <h2 className="font-sans text-[32px] leading-tight md:text-5xl font-extrabold text-white tracking-tight mb-4 drop-shadow-xl">
                 Your Adventure Awaits
               </h2>
-              <p className="text-white/95 text-base md:text-xl max-w-xl mx-auto font-light drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+              <p className="text-white/90 text-base md:text-xl max-w-xl mx-auto font-medium drop-shadow-md">
                 Explore flights, hotels, and tours crafted for unforgettable memories.
               </p>
             </motion.div>

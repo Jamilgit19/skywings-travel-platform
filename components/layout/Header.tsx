@@ -53,65 +53,68 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "py-2 bg-white/90 backdrop-blur-xl shadow-[0_1px_3px_rgba(15,23,42,0.08)] border-b border-slate-200/60"
-            : "py-4 bg-white/70 backdrop-blur-md"
+            ? "py-2 bg-[#030712]/80 backdrop-blur-xl shadow-lg border-b border-white/10"
+            : "py-4 bg-transparent backdrop-blur-sm"
         }`}
       >
-        <div className="container flex items-center justify-between">
+        <div className="container mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-3 group"
             aria-label="SkyWings Home"
           >
-            <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-[#0B4F8A] to-[#2563EB] flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-              <Plane className="w-5 h-5 text-white -rotate-45" />
+            <div className="relative w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:bg-white/20 transition-all">
+              <Plane className="w-6 h-6 text-white -rotate-45" />
             </div>
-            <span className="text-xl font-bold text-[#0F172A] tracking-tight">
-              SKY<span className="text-[#2563EB]">WINGS</span>
+            <span className="text-xl md:text-2xl font-extrabold tracking-tight text-white drop-shadow-md">
+              SKY<span className="text-[#38BDF8]">WINGS</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 text-sm font-medium text-[#64748B] hover:text-[#0F172A] rounded-lg hover:bg-slate-100/80 transition-all duration-200"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
+            <Link href="/flights" className="text-sm font-bold text-white border-b-2 border-[#38BDF8] pb-1 drop-shadow-sm">
+              Flights
+            </Link>
+            <Link href="/hotels" className="text-sm font-semibold text-white/80 hover:text-white transition-colors pb-1 drop-shadow-sm">
+              Hotels
+            </Link>
+            <Link href="/packages" className="text-sm font-semibold text-white/80 hover:text-white transition-colors pb-1 drop-shadow-sm">
+              Tour Packages
+            </Link>
+            <Link href="/about" className="text-sm font-semibold text-white/80 hover:text-white transition-colors pb-1 drop-shadow-sm">
+              About
+            </Link>
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3 md:gap-5">
             {/* WhatsApp Button - Desktop */}
             <a
               href="https://wa.me/1234567890"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 px-3 py-2 text-sm font-medium text-green-700 bg-green-50 hover:bg-green-100 rounded-full transition-colors"
+              className="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-bold text-white bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 rounded-full transition-all shadow-sm"
               aria-label="Contact via WhatsApp"
             >
-              <MessageCircle className="w-4 h-4" />
-              <span className="hidden xl:inline">WhatsApp</span>
+              <MessageCircle className="w-5 h-5 text-green-400" />
+              <span>WhatsApp</span>
             </a>
 
             {/* Currency Selector */}
             <button
-              className="hidden md:flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#64748B] hover:text-[#0F172A] rounded-lg hover:bg-slate-100/80 transition-colors"
+              className="hidden md:flex items-center gap-1 text-white/80 hover:text-white transition-colors"
               aria-label="Select currency"
             >
-              <Globe className="w-4 h-4" />
-              <span>USD</span>
-              <ChevronDown className="w-3 h-3" />
+              <Globe className="w-5 h-5" />
+              <span className="text-sm font-bold ml-1">USD</span>
+              <ChevronDown className="w-4 h-4" />
             </button>
 
             {/* Search Icon */}
             <button
-              className="w-10 h-10 flex items-center justify-center text-[#64748B] hover:text-[#0F172A] hover:bg-slate-100/80 rounded-full transition-colors"
+              className="w-10 h-10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all"
               aria-label="Search"
             >
               <Search className="w-5 h-5" />
@@ -120,31 +123,31 @@ export default function Header() {
             {/* Account Icon */}
             <Link
               href="/account"
-              className="w-10 h-10 flex items-center justify-center text-[#64748B] hover:text-[#0F172A] hover:bg-slate-100/80 rounded-full transition-colors"
+              className="w-10 h-10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all"
               aria-label="My account"
             >
               <User className="w-5 h-5" />
             </Link>
 
-            {/* Save Trip CTA - Desktop */}
+            {/* Sign In CTA - Desktop */}
             <Link
-              href="/flights"
-              className="hidden md:inline-flex btn btn-primary btn-sm"
+              href="/account"
+              className="hidden md:inline-flex bg-[#38BDF8] text-[#030712] text-sm font-extrabold px-6 py-2.5 rounded-full hover:bg-white transition-colors shadow-[0_0_15px_rgba(56,189,248,0.5)]"
             >
-              Save Trip
+              Sign In
             </Link>
 
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden w-10 h-10 flex items-center justify-center text-[#0F172A] hover:bg-slate-100/80 rounded-full transition-colors"
+              className="lg:hidden w-10 h-10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/10 rounded-full transition-all"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? (
-                <X className="w-5 h-5" />
+                <X className="w-6 h-6" />
               ) : (
-                <Menu className="w-5 h-5" />
+                <Menu className="w-6 h-6" />
               )}
             </button>
           </div>

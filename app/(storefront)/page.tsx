@@ -226,124 +226,48 @@ export default function HomePage() {
           ============================= */}
       <ScrollSequence frameCount={283} framePrefix="/frames/ezgif-frame-" />
 
-      <div className="relative z-10 bg-background shadow-[0_-20px_50px_rgba(0,0,0,0.5)]">
+      <div className="relative z-10 bg-background rounded-t-[32px] md:rounded-t-[48px] mt-[-40px] shadow-[0_-10px_40px_rgba(0,0,0,0.3)]">
         {/* =============================
-            HERO SECTION
+            HERO SECTION WITH SEARCH
             ============================= */}
-        <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-          {/* Background Image */}
-          <div className="absolute inset-0">
+        <section className="relative w-full px-4 md:px-16 pt-8 md:pt-12 pb-12">
+          {/* Hero Image Container */}
+          <div className="relative w-full h-[400px] md:h-[500px] rounded-[32px] overflow-hidden shadow-2xl mb-[-100px] z-0">
             <Image
               src="/images/hero-airplane.png"
-              alt="Commercial airplane flying above the clouds"
+              alt="Airplane window view"
               fill
               className="object-cover"
               priority
               quality={90}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#082F49]/80 via-[#082F49]/50 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#082F49]/40 to-transparent" />
-          </div>
-
-          <div className="container relative z-10 py-20 lg:py-32">
-            <div className="max-w-3xl">
-              {/* Subtitle */}
+            {/* Gradient Overlay for text visibility */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0037b0]/40 via-transparent to-[#faf8ff]/90" />
+            
+            {/* Hero Text with Animation */}
+            <div className="absolute top-12 md:top-20 left-6 md:left-16 max-w-lg z-10">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-label text-[#38BDF8] mb-4"
+                className="text-xs md:text-sm font-bold text-white tracking-widest uppercase mb-4 block opacity-90 drop-shadow-md"
               >
-                Elevate Your Travel Journey
+                Elevate Your Travel
               </motion.p>
-
-              {/* Heading */}
+              
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="heading-hero text-white mb-6"
+                className="text-[28px] leading-[36px] md:text-[48px] md:leading-[56px] text-white font-extrabold drop-shadow-lg"
               >
-                Experience The
-                <br />
-                Magic Of{" "}
-                <span className="text-[#38BDF8]">Flight!</span>
+                Experience The Magic Of Flight
               </motion.h1>
-
-              {/* Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.35 }}
-                className="text-white/70 text-lg max-w-lg mb-8 leading-relaxed"
-              >
-                Discover amazing destinations worldwide. Book flights, hotels, and
-                tours with confidence. Your next adventure is just a click away.
-              </motion.p>
-
-              {/* CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.45 }}
-                className="flex flex-wrap items-center gap-4 mb-12"
-              >
-                <Link
-                  href="#search"
-                  className="btn btn-primary btn-lg shadow-lg shadow-blue-500/30"
-                >
-                  Book A Trip Now
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-                <Link
-                  href="/about"
-                  className="btn px-6 py-3 text-white/90 hover:text-white border border-white/20 hover:border-white/40 rounded-full transition-all text-sm font-medium"
-                >
-                  Know More →
-                </Link>
-              </motion.div>
-
-              {/* Trust Indicator */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-                className="flex items-center gap-4"
-              >
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
-                      key={i}
-                      className="w-8 h-8 rounded-full bg-gradient-to-br from-sky-300 to-blue-500 border-2 border-white/20 flex items-center justify-center text-xs text-white font-bold"
-                    >
-                      {String.fromCharCode(64 + i)}
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <p className="text-white text-sm font-semibold">
-                    50,000+ Happy Travellers
-                  </p>
-                  <div className="flex items-center gap-1">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <Star
-                        key={i}
-                        className="w-3 h-3 text-yellow-400 fill-yellow-400"
-                      />
-                    ))}
-                    <span className="text-white/60 text-xs ml-1">4.9/5</span>
-                  </div>
-                </div>
-              </motion.div>
             </div>
           </div>
-        </section>
 
-        {/* =============================
-            SEARCH WIDGET
-            ============================= */}
-        <section id="search" className="relative -mt-16 z-20">
-          <div className="container">
+          {/* Search Widget (Elevated) */}
+          <div className="relative z-10 w-full max-w-4xl mx-auto">
             <SearchWidget />
           </div>
         </section>
