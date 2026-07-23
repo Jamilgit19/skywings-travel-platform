@@ -56,75 +56,86 @@ export default function SearchWidget() {
         </div>
 
         {/* Search Form */}
-        <form onSubmit={handleSearch} className="p-6 bg-surface-container">
-          <div className="flex flex-col md:flex-row gap-4 items-center">
-            {/* From */}
-            <div className="flex-1 w-full relative">
-              <label className="absolute top-2 left-4 font-label-sm text-label-sm text-outline z-10">From</label>
-              <input
-                type="text"
-                value={origin}
-                onChange={(e) => setOrigin(e.target.value)}
-                placeholder="City or Airport"
-                className="w-full pt-6 pb-2 px-4 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none font-body-md text-on-surface bg-transparent transition-all"
-                required
-              />
-              <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline">flight_takeoff</span>
-            </div>
+        <form onSubmit={handleSearch} className="p-4 md:p-6 bg-surface-container">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
+            
+            {/* From & To Wrapper (Spans 2 columns on lg) */}
+            <div className="lg:col-span-2 flex flex-col md:flex-row items-center gap-2 relative w-full">
+              {/* From */}
+              <div className="w-full h-[64px] relative bg-surface-container-lowest/80 border border-outline-variant/50 rounded-xl px-4 py-2 flex flex-col justify-center focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
+                <span className="text-[10px] md:text-[11px] font-bold text-outline uppercase tracking-wider leading-none mb-1 pointer-events-none">From</span>
+                <div className="flex items-center justify-between">
+                  <input
+                    type="text"
+                    value={origin}
+                    onChange={(e) => setOrigin(e.target.value)}
+                    placeholder="City or Airport"
+                    className="w-full bg-transparent border-none p-0 focus:outline-none focus:ring-0 text-[14px] md:text-[15px] font-semibold text-on-surface leading-tight truncate"
+                    required
+                  />
+                  <span className="material-symbols-outlined text-outline/80 text-[18px] shrink-0 ml-1 pointer-events-none">flight_takeoff</span>
+                </div>
+              </div>
 
-            {/* Swap Icon */}
-            <motion.button
-              type="button"
-              onClick={handleSwap}
-              animate={{ rotate: isSwapping ? 180 : 0 }}
-              transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-              className="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary shrink-0 cursor-pointer hover:bg-primary hover:text-white transition-colors shadow-sm hidden md:flex z-10 -mx-6"
-            >
-              <span className="material-symbols-outlined">swap_horiz</span>
-            </motion.button>
+              {/* Swap Button */}
+              <motion.button
+                type="button"
+                onClick={handleSwap}
+                animate={{ rotate: isSwapping ? 180 : 0 }}
+                transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                className="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant/40 flex items-center justify-center text-primary shrink-0 cursor-pointer hover:bg-primary hover:text-white transition-colors shadow-sm z-10 md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2"
+                aria-label="Swap origin and destination"
+              >
+                <span className="material-symbols-outlined text-[16px]">swap_horiz</span>
+              </motion.button>
 
-            {/* To */}
-            <div className="flex-1 w-full relative">
-              <label className="absolute top-2 left-4 font-label-sm text-label-sm text-outline z-10">To</label>
-              <input
-                type="text"
-                value={destination}
-                onChange={(e) => setDestination(e.target.value)}
-                placeholder="Where to?"
-                className="w-full pt-6 pb-2 px-4 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none font-body-md text-on-surface bg-transparent transition-all"
-                required
-              />
-              <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline">flight_land</span>
+              {/* To */}
+              <div className="w-full h-[64px] relative bg-surface-container-lowest/80 border border-outline-variant/50 rounded-xl px-4 py-2 flex flex-col justify-center focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
+                <span className="text-[10px] md:text-[11px] font-bold text-outline uppercase tracking-wider leading-none mb-1 pointer-events-none">To</span>
+                <div className="flex items-center justify-between">
+                  <input
+                    type="text"
+                    value={destination}
+                    onChange={(e) => setDestination(e.target.value)}
+                    placeholder="Where to?"
+                    className="w-full bg-transparent border-none p-0 focus:outline-none focus:ring-0 text-[14px] md:text-[15px] font-semibold text-on-surface leading-tight truncate"
+                    required
+                  />
+                  <span className="material-symbols-outlined text-outline/80 text-[18px] shrink-0 ml-1 pointer-events-none">flight_land</span>
+                </div>
+              </div>
             </div>
 
             {/* Dates */}
-            <div className="flex-1 w-full relative">
-              <label className="absolute top-2 left-4 font-label-sm text-label-sm text-outline z-10">Depart - Return</label>
-              <div className="w-full border border-outline-variant rounded-lg flex items-center focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all overflow-hidden relative">
+            <div className="lg:col-span-1 w-full h-[64px] relative bg-surface-container-lowest/80 border border-outline-variant/50 rounded-xl px-4 py-2 flex flex-col justify-center focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
+              <span className="text-[10px] md:text-[11px] font-bold text-outline uppercase tracking-wider leading-none mb-1 pointer-events-none">Dates</span>
+              <div className="flex items-center justify-between">
                 <input
-                  type="date"
-                  className="w-full pt-6 pb-2 pl-4 pr-10 outline-none font-body-md text-on-surface bg-transparent border-none focus:ring-0 cursor-pointer"
+                  type="text"
+                  placeholder="Select Dates"
+                  defaultValue="Aug 10 - Aug 24"
+                  className="w-full bg-transparent border-none p-0 focus:outline-none focus:ring-0 text-[14px] md:text-[15px] font-semibold text-on-surface leading-tight cursor-pointer truncate"
                 />
+                <span className="material-symbols-outlined text-outline/80 text-[18px] shrink-0 ml-1 pointer-events-none">calendar_month</span>
               </div>
-              <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none">calendar_month</span>
             </div>
 
             {/* Passengers */}
-            <div className="flex-1 w-full relative">
-              <label className="absolute top-2 left-4 font-label-sm text-label-sm text-outline z-10">Passengers &amp; Class</label>
-              <div className="w-full pt-6 pb-2 px-4 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none font-body-md text-on-surface bg-transparent cursor-pointer flex justify-between items-center">
-                <span className="truncate">2 Adults, Economy</span>
-                <span className="material-symbols-outlined text-outline">person</span>
+            <div className="lg:col-span-1 w-full h-[64px] relative bg-surface-container-lowest/80 border border-outline-variant/50 rounded-xl px-4 py-2 flex flex-col justify-center cursor-pointer focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
+              <span className="text-[10px] md:text-[11px] font-bold text-outline uppercase tracking-wider leading-none mb-1 pointer-events-none">Travelers</span>
+              <div className="flex items-center justify-between">
+                <span className="text-[14px] md:text-[15px] font-semibold text-on-surface truncate leading-tight">2 Adults</span>
+                <span className="material-symbols-outlined text-outline/80 text-[18px] shrink-0 ml-1 pointer-events-none">person</span>
               </div>
             </div>
 
             {/* Submit */}
             <button
               type="submit"
-              className="w-full md:w-auto h-[60px] px-8 bg-primary text-on-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary-fixed-variant transition-colors shadow-md shrink-0"
+              className="lg:col-span-1 w-full h-[64px] px-6 bg-primary text-on-primary rounded-xl font-bold text-[15px] tracking-wide flex items-center justify-center gap-2 hover:bg-primary-fixed-variant transition-all shadow-md shrink-0 cursor-pointer active:scale-95"
             >
-              <span className="material-symbols-outlined">search</span>
-              Search
+              <span className="material-symbols-outlined text-[20px]">search</span>
+              <span>Search</span>
             </button>
           </div>
         </form>

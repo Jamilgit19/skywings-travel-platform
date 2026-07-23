@@ -188,11 +188,11 @@ export default function ScrollSequence({
               style={{ opacity: text1Opacity, y: text1Y }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <div className="w-full max-w-2xl mx-auto px-6 text-center">
-                <span className="inline-block px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold uppercase tracking-[0.15em] mb-6 shadow-lg">
+              <div className="w-full max-w-2xl mx-auto px-6 text-center flex flex-col items-center">
+                <span className="inline-flex items-center whitespace-nowrap badge-pill px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold uppercase tracking-[0.15em] mb-6 shadow-lg">
                   Elevate Your View
                 </span>
-                <h2 className="text-[36px] leading-[1.1] md:text-[56px] md:leading-[1.1] font-extrabold text-white tracking-tight mb-5 drop-shadow-xl">
+                <h2 className="text-[32px] leading-[1.15] md:text-[56px] md:leading-[1.1] font-extrabold text-white tracking-tight mb-5 drop-shadow-xl">
                   Look Beyond The Horizon
                 </h2>
                 <p className="text-white/85 text-[15px] md:text-[18px] leading-[1.6] font-medium drop-shadow-md">
@@ -210,11 +210,11 @@ export default function ScrollSequence({
               style={{ opacity: text2Opacity, y: text2Y }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <div className="w-full max-w-2xl mx-auto px-6 text-center">
-                <span className="inline-block px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold uppercase tracking-[0.15em] mb-6 shadow-lg">
+              <div className="w-full max-w-2xl mx-auto px-6 text-center flex flex-col items-center">
+                <span className="inline-flex items-center whitespace-nowrap badge-pill px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold uppercase tracking-[0.15em] mb-6 shadow-lg">
                   World-Class Travel
                 </span>
-                <h2 className="text-[36px] leading-[1.1] md:text-[56px] md:leading-[1.1] font-extrabold text-white tracking-tight mb-5 drop-shadow-xl">
+                <h2 className="text-[32px] leading-[1.15] md:text-[56px] md:leading-[1.1] font-extrabold text-white tracking-tight mb-5 drop-shadow-xl">
                   500+ Global Destinations
                 </h2>
                 <p className="text-white/85 text-[15px] md:text-[18px] leading-[1.6] font-medium drop-shadow-md">
@@ -228,11 +228,11 @@ export default function ScrollSequence({
               style={{ opacity: text3Opacity, y: text3Y }}
               className="absolute inset-0 flex items-center justify-center"
             >
-              <div className="w-full max-w-2xl mx-auto px-6 text-center">
-                <span className="inline-block px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold uppercase tracking-[0.15em] mb-6 shadow-lg">
+              <div className="w-full max-w-2xl mx-auto px-6 text-center flex flex-col items-center">
+                <span className="inline-flex items-center whitespace-nowrap badge-pill px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold uppercase tracking-[0.15em] mb-6 shadow-lg">
                   Welcome To SkyWings
                 </span>
-                <h2 className="text-[36px] leading-[1.1] md:text-[56px] md:leading-[1.1] font-extrabold text-white tracking-tight mb-5 drop-shadow-xl">
+                <h2 className="text-[32px] leading-[1.15] md:text-[56px] md:leading-[1.1] font-extrabold text-white tracking-tight mb-5 drop-shadow-xl">
                   Your Adventure Awaits
                 </h2>
                 <p className="text-white/85 text-[15px] md:text-[18px] leading-[1.6] font-medium drop-shadow-md">

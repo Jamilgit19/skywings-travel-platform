@@ -139,7 +139,7 @@ export default function Header() {
             {/* CTA */}
             <Link
               href="/account"
-              className="hidden md:inline-flex bg-primary-container text-white text-[13px] font-semibold tracking-wide px-5 py-2 rounded-full hover:bg-inverse-primary transition-all duration-200 shadow-[0_2px_12px_rgba(29,78,216,0.4)]"
+              className="hidden md:inline-flex bg-primary text-on-primary text-[14px] font-bold tracking-wide px-6 py-2.5 rounded-full hover:bg-primary-fixed-variant transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-[1px]"
             >
               Save Trip
             </Link>

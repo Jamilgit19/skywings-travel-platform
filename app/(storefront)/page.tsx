@@ -88,14 +88,14 @@ export default function HomePage() {
             <div className="absolute inset-0 hero-gradient" />
 
             {/* Hero Text */}
-            <div className="absolute top-12 md:top-20 left-6 md:left-16 max-w-lg z-10">
+            <div className="absolute top-8 md:top-14 left-6 md:left-16 z-10 w-[90%] md:w-[540px]">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="inline-block bg-primary/20 backdrop-blur-sm border border-primary/30 px-3 py-1 rounded-full mb-6"
+                className="inline-flex items-center bg-primary/20 backdrop-blur-sm border border-primary/30 px-4 py-1.5 rounded-full mb-3 whitespace-nowrap badge-pill"
               >
-                <span className="font-label-sm text-label-sm uppercase tracking-widest text-white">
+                <span className="text-label-sm uppercase tracking-widest text-white whitespace-nowrap font-bold">
                   WELCOME TO SKYWINGS
                 </span>
               </motion.div>
@@ -104,7 +104,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="heading-hero text-white drop-shadow-lg"
+                className="heading-hero text-white drop-shadow-lg leading-tight mb-2"
               >
                 Your Adventure Awaits
               </motion.h1>
@@ -113,7 +113,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.35 }}
-                className="font-body-lg text-body-lg text-white/90 max-w-2xl mt-4 drop-shadow-md"
+                className="text-body-lg text-white/90 drop-shadow-md leading-relaxed w-full"
               >
                 Explore flights, hotels, and tours crafted for unforgettable memories.
               </motion.p>
@@ -244,15 +244,15 @@ export default function HomePage() {
                     className="object-cover opacity-40 mix-blend-overlay"
                   />
                 </div>
-                <div className="relative z-10 p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8">
-                  <div className="max-w-xl text-center md:text-left">
-                    <span className="inline-block bg-white/20 backdrop-blur-md px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider mb-4 border border-white/30">
+                <div className="relative z-10 p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
+                  <div className="w-full md:flex-1 max-w-2xl text-center md:text-left flex flex-col items-center md:items-start">
+                    <span className="inline-flex items-center bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-label-sm uppercase tracking-wider mb-4 border border-white/30 whitespace-nowrap badge-pill font-bold">
                       Limited Time Offer
                     </span>
-                    <h2 className="heading-section text-white mb-4">
+                    <h2 className="heading-section text-white mb-3">
                       Island Escapes up to 30% Off
                     </h2>
-                    <p className="font-body-lg text-body-lg text-white/90 mb-6">
+                    <p className="text-body-lg text-white/90 mb-6 max-w-xl">
                       Book your tropical getaway before the end of the month and receive complimentary lounge access.
                     </p>
                     <Link
@@ -262,10 +262,10 @@ export default function HomePage() {
                       Claim Offer
                     </Link>
                   </div>
-                  <div className="hidden md:flex w-48 h-48 rounded-full bg-white/10 backdrop-blur-md border border-white/20 items-center justify-center shrink-0">
+                  <div className="hidden md:flex w-40 h-40 rounded-full bg-white/10 backdrop-blur-md border border-white/20 items-center justify-center shrink-0 shadow-xl">
                     <div className="text-center">
-                      <span className="block font-headline-lg text-headline-lg leading-none">-30%</span>
-                      <span className="block font-label-sm text-label-sm uppercase tracking-widest mt-1">Discount</span>
+                      <span className="block text-[42px] text-white font-black leading-none drop-shadow-md">-30%</span>
+                      <span className="block text-[12px] text-white/90 uppercase tracking-[0.2em] mt-1 font-bold">Discount</span>
                     </div>
                   </div>
                 </div>
