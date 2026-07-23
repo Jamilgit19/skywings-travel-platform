@@ -65,13 +65,7 @@
   --color-on-background: #dae2fd;
   --color-surface-variant: #2d3449;
 
-  /* Spacing (4px base rhythm) */
-  --spacing-base: 4px;
-  --spacing-xs: 8px;
-  --spacing-sm: 16px;
-  --spacing-md: 24px;
-  --spacing-lg: 40px;
-  --spacing-xl: 64px;
+  /* Custom Spacing Variables */
   --spacing-gutter: 24px;
   --spacing-margin-mobile: 16px;
   --spacing-margin-desktop: 48px;
