@@ -1,350 +1,505 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
+<html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SkyWings - Flight Search Results</title>
+<title>SkyWings - Your Adventure Awaits</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Geist:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary-container": "#1d4ed8",
-                        "secondary-container": "#64a8fe",
-                        "outline": "#747686",
-                        "on-tertiary": "#ffffff",
-                        "primary-fixed-dim": "#b7c4ff",
-                        "surface-container-highest": "#dae2fd",
-                        "on-background": "#131b2e",
-                        "secondary-fixed": "#d4e3ff",
-                        "on-tertiary-container": "#cdd6db",
-                        "surface-container-high": "#e2e7ff",
-                        "on-surface-variant": "#434655",
-                        "on-secondary": "#ffffff",
-                        "surface-bright": "#faf8ff",
-                        "tertiary-fixed-dim": "#bfc8ce",
-                        "on-primary-fixed": "#001551",
-                        "on-primary": "#ffffff",
-                        "outline-variant": "#c4c5d7",
-                        "background": "#faf8ff",
-                        "secondary": "#0060ac",
-                        "tertiary-fixed": "#dbe4ea",
-                        "on-secondary-container": "#003c70",
-                        "on-tertiary-fixed": "#141d21",
-                        "inverse-on-surface": "#eef0ff",
-                        "surface-container-low": "#f2f3ff",
-                        "error-container": "#ffdad6",
-                        "on-primary-fixed-variant": "#0039b5",
-                        "surface-variant": "#dae2fd",
-                        "tertiary": "#3d454a",
-                        "on-tertiary-fixed-variant": "#3f484d",
-                        "surface": "#faf8ff",
-                        "surface-container": "#eaedff",
-                        "primary": "#0037b0",
-                        "inverse-surface": "#283044",
-                        "on-surface": "#131b2e",
-                        "tertiary-container": "#545d62",
-                        "on-secondary-fixed": "#001c39",
-                        "on-primary-container": "#cad3ff",
-                        "surface-container-lowest": "#ffffff",
-                        "inverse-primary": "#b7c4ff",
-                        "primary-fixed": "#dce1ff",
-                        "surface-tint": "#2151da",
-                        "on-error-container": "#93000a",
-                        "secondary-fixed-dim": "#a4c9ff",
-                        "surface-dim": "#d2d9f4",
-                        "on-error": "#ffffff",
-                        "error": "#ba1a1a",
-                        "on-secondary-fixed-variant": "#004883"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "base": "8px",
-                        "container-padding-mobile": "20px",
-                        "gutter": "16px",
-                        "section-gap": "48px",
-                        "container-padding-desktop": "64px"
-                    },
-                    "fontFamily": {
-                        "display-lg": ["Manrope"],
-                        "label-sm": ["Manrope"],
-                        "headline-md": ["Manrope"],
-                        "headline-lg-mobile": ["Manrope"],
-                        "headline-lg": ["Manrope"],
-                        "body-lg": ["Manrope"],
-                        "body-md": ["Manrope"],
-                        "label-md": ["Manrope"]
-                    },
-                    "fontSize": {
-                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
-                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
-                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
-                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
-                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
-                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
-                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }]
-                    }
-                }
-            }
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "inverse-surface": "#dae2fd",
+                "primary-container": "#1d4ed8",
+                "on-primary-container": "#cad3ff",
+                "on-tertiary-fixed": "#390c00",
+                "on-secondary-fixed": "#001e2c",
+                "on-error": "#690005",
+                "secondary-container": "#00a6e0",
+                "on-surface-variant": "#c4c5d7",
+                "tertiary-container": "#a73400",
+                "surface-variant": "#2d3449",
+                "error": "#ffb4ab",
+                "primary-fixed": "#dce1ff",
+                "surface-container-high": "#222a3d",
+                "primary-fixed-dim": "#b7c4ff",
+                "outline-variant": "#434655",
+                "surface-dim": "#0b1326",
+                "surface": "#0b1326",
+                "on-error-container": "#ffdad6",
+                "surface-container-lowest": "#060e20",
+                "surface-container-highest": "#2d3449",
+                "tertiary-fixed-dim": "#ffb59c",
+                "error-container": "#93000a",
+                "tertiary": "#ffb59c",
+                "inverse-primary": "#2151da",
+                "surface-container": "#171f33",
+                "surface-tint": "#b7c4ff",
+                "on-primary-fixed": "#001551",
+                "secondary": "#7bd0ff",
+                "on-primary": "#002682",
+                "primary": "#b7c4ff",
+                "on-primary-fixed-variant": "#0039b5",
+                "secondary-fixed-dim": "#7bd0ff",
+                "tertiary-fixed": "#ffdbcf",
+                "on-secondary-fixed-variant": "#004c69",
+                "on-secondary": "#00354a",
+                "on-background": "#dae2fd",
+                "surface-container-low": "#131b2e",
+                "on-secondary-container": "#00374d",
+                "on-surface": "#dae2fd",
+                "on-tertiary": "#5c1900",
+                "on-tertiary-fixed-variant": "#832700",
+                "surface-bright": "#31394d",
+                "on-tertiary-container": "#ffc9b7",
+                "outline": "#8e90a0",
+                "inverse-on-surface": "#283044",
+                "secondary-fixed": "#c4e7ff",
+                "background": "#0b1326"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-mobile": "16px",
+                "margin-desktop": "48px",
+                "md": "24px",
+                "base": "4px",
+                "sm": "16px",
+                "xl": "64px",
+                "xs": "8px",
+                "lg": "40px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Hanken Grotesk"
+                ],
+                "label-md": [
+                        "Geist"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "Geist"
+                ],
+                "headline-lg-mobile": [
+                        "Hanken Grotesk"
+                ],
+                "headline-md": [
+                        "Hanken Grotesk"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-sm": [
+                        "Hanken Grotesk"
+                ],
+                "body-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "14px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-sm": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ]
         }
-    </script>
+},
+    },
+  }
+</script>
 <style>
-        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(11, 19, 38, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(11, 19, 38, 0.4), rgba(11, 19, 38, 0.1));
+        }
+        .card-gradient {
+            background: linear-gradient(to top, rgba(11, 19, 38, 0.9) 0%, rgba(11, 19, 38, 0) 50%);
+        }
+        
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            background: transparent;
+            bottom: 0;
+            color: transparent;
+            cursor: pointer;
+            height: auto;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: auto;
+        }
     </style>
 </head>
-<body class="bg-background text-on-background min-h-screen pb-24 md:pb-0">
-<!-- TopAppBar (Mobile) / Header (Desktop) -->
-<header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all md:hidden">
-<div class="flex justify-between items-center px-container-padding-mobile h-16">
-<button class="text-on-surface-variant p-2 -ml-2 rounded-full hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">arrow_back</span>
-</button>
-<div class="flex flex-col items-center">
-<h1 class="font-headline-md text-headline-md font-bold text-on-surface">JFK to LHR</h1>
-<p class="font-label-sm text-label-sm text-on-surface-variant">Oct 12 • 1 Passenger</p>
-</div>
-<button class="text-on-surface-variant p-2 -mr-2 rounded-full hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">tune</span>
-</button>
-</div>
-</header>
-<!-- Desktop Header -->
-<header class="hidden md:flex fixed top-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm h-20 px-container-padding-desktop justify-between items-center">
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky bg-surface dark:bg-surface border-b border-white/10 z-50">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-7xl mx-auto">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-3xl">flight_takeoff</span>
-<span class="font-display-lg text-headline-md font-extrabold tracking-tight text-primary">SkyWings</span>
+<span class="material-symbols-outlined text-primary dark:text-primary fill text-3xl">flight</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary uppercase">SKYWINGS</span>
 </div>
-<nav class="hidden lg:flex items-center gap-8">
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Flights</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Hotels</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Offers</a>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-primary dark:text-primary border-b-2 border-primary pb-1 font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:opacity-80 transition-all" href="#">Flights</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:opacity-80 transition-all" href="#">Hotels</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:opacity-80 transition-all" href="#">Packages</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full cursor-pointer hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined fill text-xl">chat</span>
+<span class="font-label-md text-label-md">WhatsApp</span>
+</div>
+<div class="hidden lg:flex items-center gap-1 cursor-pointer text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">language</span>
+<span class="font-label-md text-label-md">USD</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/5 p-2 rounded-full">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/5 p-2 rounded-full">
+<span class="material-symbols-outlined text-2xl">account_circle</span>
+</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2.5 rounded-full hover:shadow-md hover:bg-on-primary-fixed-variant transition-all hover:scale-95 duration-150">
+                Save Trip
+            </button>
+</div>
+</div>
 </nav>
-<div class="flex items-center gap-4">
-<div class="flex items-center gap-3 bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant/50">
-<span class="font-label-md text-label-md text-on-surface font-bold">JFK</span>
-<span class="material-symbols-outlined text-outline text-sm">arrow_forward</span>
-<span class="font-label-md text-label-md text-on-surface font-bold">LHR</span>
-<div class="w-px h-4 bg-outline-variant/50 mx-2"></div>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 12</span>
-<div class="w-px h-4 bg-outline-variant/50 mx-2"></div>
-<span class="font-label-sm text-label-sm text-on-surface-variant">1 Pax</span>
+<!-- Hero Section -->
+<section class="relative w-full h-[600px] md:h-[700px] flex items-center justify-center">
+<!-- Background Image -->
+<div class="absolute inset-0 w-full h-full">
+<img alt="Eiffel Tower above clouds" class="w-full h-full object-cover" data-alt="A breathtaking, cinematic view of the Eiffel Tower soaring above a thick sea of ethereal white clouds at twilight. The lighting is moody and dramatic with deep blues and purples in the sky, contrasting with the warm, glowing lights of the tower structure. The aesthetic is highly premium, dreamy, and aspirational, fitting for a luxury travel brand. Wide angle shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNZgCsFuHiP_Rsso02PfNbzU_wFdczvpge5CVpuSmygLjGzJ5X3UVVvGebRyllrg0vDSawBb5JFWqdAwC7_UNfUdJZAvgrFx8-FLhXH7Fxt9c3QTwssRkDaZknQ7lfS-0V2eKQVwcoR7o1t1buDiidZegaXmBo8n_a_IiXGIqJ-PcZavmKBQFbjsgvb55dM6oOV1VgypNVjSYG3WLPOniTiNCpLjCPyrXLeMQarn3oupwtCBOmCuHG"/>
+<div class="absolute inset-0 hero-gradient"></div>
 </div>
-<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-primary-container/10 transition-colors">
-<span class="material-symbols-outlined">account_circle</span>
-</button>
+<!-- Hero Content -->
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto mt-[-100px]">
+<div class="inline-block bg-primary/20 backdrop-blur-sm border border-primary/30 text-primary-fixed px-3 py-1 rounded-full mb-6">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-white">WELCOME TO SKYWINGS</span>
 </div>
-</header>
-<main class="pt-20 md:pt-28 px-container-padding-mobile md:px-container-padding-desktop max-w-7xl mx-auto">
-<!-- Filters & Sorting (Desktop) -->
-<div class="hidden md:flex justify-between items-center mb-8 pb-4 border-b border-outline-variant/20">
-<div class="flex gap-3">
-<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant hover:border-primary hover:text-primary transition-colors font-label-md text-label-md text-on-surface bg-surface">
-                    Price <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
-</button>
-<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant hover:border-primary hover:text-primary transition-colors font-label-md text-label-md text-on-surface bg-surface">
-                    Duration <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
-</button>
-<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant hover:border-primary hover:text-primary transition-colors font-label-md text-label-md text-on-surface bg-surface">
-                    Airlines <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
-</button>
-<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant hover:border-primary hover:text-primary transition-colors font-label-md text-label-md text-on-surface bg-surface">
-                    Stops <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
-</button>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-4 drop-shadow-lg">Your Adventure Awaits</h1>
+<p class="font-body-lg text-body-lg text-white/90 max-w-2xl mx-auto drop-shadow-md">
+                Explore flights, hotels, and tours crafted for unforgettable memories.
+            </p>
 </div>
-<div class="flex items-center gap-4">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Sort by:</span>
-<select class="bg-transparent border-none font-label-md text-label-md text-primary font-bold focus:ring-0 cursor-pointer p-0 pr-6">
-<option>Recommended</option>
-<option>Price (Low to High)</option>
-<option>Duration (Shortest)</option>
-<option>Departure (Earliest)</option>
-</select>
-</div>
-</div>
-<!-- Date Ribbon (Mobile) -->
-<div class="flex gap-2 overflow-x-auto pb-4 mb-4 -mx-container-padding-mobile px-container-padding-mobile no-scrollbar md:hidden">
-<button class="flex-shrink-0 flex flex-col items-center justify-center py-2 px-4 rounded-lg bg-surface border border-outline-variant/30 min-w-[80px]">
-<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 10</span>
-<span class="font-label-md text-label-md font-bold text-on-surface">$420</span>
+<!-- Search Widget (Overlapping Hero) -->
+<div class="absolute bottom-0 left-0 w-full translate-y-1/2 px-margin-mobile md:px-margin-desktop z-20">
+<div class="max-w-6xl mx-auto">
+<div class="glass-panel rounded-2xl shadow-lg border border-surface-dim overflow-hidden bg-surface-container">
+<!-- Tabs -->
+<div class="flex border-b border-outline-variant/30 bg-surface/50">
+<button class="flex-1 py-4 flex items-center justify-center gap-2 border-b-2 border-primary text-primary bg-surface-container-high">
+<span class="material-symbols-outlined">flight</span>
+<span class="font-label-md text-label-md">Flights</span>
 </button>
-<button class="flex-shrink-0 flex flex-col items-center justify-center py-2 px-4 rounded-lg bg-surface border border-outline-variant/30 min-w-[80px]">
-<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 11</span>
-<span class="font-label-md text-label-md font-bold text-on-surface">$390</span>
+<button class="flex-1 py-4 flex items-center justify-center gap-2 text-on-surface-variant hover:bg-surface-container-high/50 transition-colors">
+<span class="material-symbols-outlined">hotel</span>
+<span class="font-label-md text-label-md">Hotels</span>
 </button>
-<button class="flex-shrink-0 flex flex-col items-center justify-center py-2 px-4 rounded-lg bg-primary text-on-primary shadow-md min-w-[80px]">
-<span class="font-label-sm text-label-sm text-primary-fixed-dim">Oct 12</span>
-<span class="font-label-md text-label-md font-bold text-white">$450</span>
-</button>
-<button class="flex-shrink-0 flex flex-col items-center justify-center py-2 px-4 rounded-lg bg-surface border border-outline-variant/30 min-w-[80px]">
-<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 13</span>
-<span class="font-label-md text-label-md font-bold text-on-surface">$380</span>
-</button>
-<button class="flex-shrink-0 flex flex-col items-center justify-center py-2 px-4 rounded-lg bg-surface border border-outline-variant/30 min-w-[80px]">
-<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 14</span>
-<span class="font-label-md text-label-md font-bold text-on-surface">$410</span>
+<button class="flex-1 py-4 flex items-center justify-center gap-2 text-on-surface-variant hover:bg-surface-container-high/50 transition-colors">
+<span class="material-symbols-outlined">luggage</span>
+<span class="font-label-md text-label-md">Packages</span>
 </button>
 </div>
-<div class="flex flex-col gap-4">
-<!-- Flight Card 1 (Recommended) -->
-<div class="bg-surface rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(0,0,0,0.03)] overflow-hidden transition-all hover:shadow-[0_8px_30px_rgba(29,78,216,0.08)] hover:border-primary/30 relative">
-<div class="absolute top-0 left-0 bg-secondary text-on-secondary px-3 py-1 rounded-br-lg font-label-sm text-label-sm font-bold z-10 flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">star</span> Recommended
-                </div>
-<div class="p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-6 mt-4 md:mt-0">
-<!-- Airline Info -->
-<div class="flex items-center gap-4 md:w-[200px] flex-shrink-0">
-<div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary font-bold overflow-hidden border border-blue-100">
-<img alt="Airline Logo" class="w-full h-full object-cover opacity-80 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAydrDgRjqD1HMdE1Va-CvVVemNncG3TWlEa7TaDsa5JyC6sH5jubnsJ47eN6-SAXT4PKcEMRziv2CPoPnpUAfPZJmK1yC-RJhmZyCfXGalmvhnjlTOQYa36tDpCEioictVLir82AECqtgOEfQp6m4Qg5o-lVVTCq2oUAZ1c9cmo36pXc46UAE25g-l4WZ9n5RK86O3kHJnsaO_td4j73uzv3DWFGa-XMe2gSuH4jRg2eCDhOIZ0kDo"/>
+<!-- Search Form -->
+<div class="p-6 bg-surface-container">
+<div class="flex flex-col md:flex-row gap-4 items-center">
+<!-- From -->
+<div class="flex-1 w-full relative">
+<label class="absolute top-2 left-4 font-label-sm text-label-sm text-outline">From</label>
+<input class="w-full pt-6 pb-2 px-4 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none font-body-md text-on-surface bg-transparent transition-all" placeholder="City or Airport" type="text" value="New York (JFK)"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline">flight_takeoff</span>
 </div>
+<!-- Swap Icon -->
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary shrink-0 cursor-pointer hover:bg-primary hover:text-white transition-colors shadow-sm hidden md:flex z-10 -mx-6">
+<span class="material-symbols-outlined">swap_horiz</span>
+</div>
+<!-- To -->
+<div class="flex-1 w-full relative">
+<label class="absolute top-2 left-4 font-label-sm text-label-sm text-outline">To</label>
+<input class="w-full pt-6 pb-2 px-4 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none font-body-md text-on-surface bg-transparent transition-all" placeholder="Where to?" type="text" value="Paris (CDG)"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline">flight_land</span>
+</div>
+<!-- Dates -->
+<div class="flex-1 w-full relative">
+<label class="absolute top-2 left-4 font-label-sm text-label-sm text-outline">Depart - Return</label>
+<div class="w-full border border-outline-variant rounded-lg flex items-center focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all overflow-hidden relative">
+<input class="w-full pt-6 pb-2 pl-4 pr-10 outline-none font-body-md text-on-surface bg-transparent border-none focus:ring-0 cursor-pointer text-on-surface" type="date"/>
+</div>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none">calendar_month</span>
+</div>
+<!-- Passengers -->
+<div class="flex-1 w-full relative">
+<label class="absolute top-2 left-4 font-label-sm text-label-sm text-outline">Passengers &amp; Class</label>
+<div class="w-full pt-6 pb-2 px-4 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none font-body-md text-on-surface bg-transparent cursor-pointer flex justify-between items-center">
+<span class="truncate">2 Adults, Economy</span>
+<span class="material-symbols-outlined text-outline">person</span>
+</div>
+</div>
+<!-- Submit -->
+<button class="w-full md:w-auto h-[60px] px-8 bg-primary text-on-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-primary-fixed-variant transition-colors shadow-md shrink-0">
+<span class="material-symbols-outlined">search</span>
+                                Search
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer to account for overlapping search widget -->
+<div class="h-32 md:h-24"></div>
+<!-- Popular Destinations Section -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-8">
 <div>
-<p class="font-label-md text-label-md font-bold text-on-surface">SkyWings Air</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">SW-402 • Boeing 787</p>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-2">Popular Destinations</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Discover our most booked locations this week</p>
+</div>
+<button class="hidden md:flex items-center gap-1 text-primary font-label-md text-label-md hover:text-primary-fixed-dim transition-colors">
+                View all <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group rounded-2xl overflow-hidden cursor-pointer relative aspect-[4/5] shadow-sm hover:shadow-lg transition-all duration-300 border border-outline-variant/20">
+<img alt="Santorini" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A pristine, sun-drenched view of Oia, Santorini. White-washed buildings with iconic blue domed roofs cascade down a steep cliffside towards the deep azure Aegean Sea. Bright, clear daytime lighting creates crisp shadows. The scene evokes a premium, serene Mediterranean holiday vibe, perfect for a luxury travel site." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2EzXVlC7h8FYWaFIZn9Q2HU4EOoUV2sAjSo-6p7Kj9CgW-gaZtNPNAmseah5GAXhCxBZxWINJEgd2Q_NBnZYxhoeTSMhlbZuFo6gDWAcqlOnP2_kAsScRgWo9nN0AVKKEtGoNdKAUyYaJAwibXjIp8DTYShemePldO67BpX7psigKKU8rl0KXPEzNS73lJcXn09AA1y0nRu05df0oAs5xdXhqK1bsaabAHq5TX8CTHgy7nC-fDv74"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1 z-10 border border-white/10">
+<span class="material-symbols-outlined text-sm text-[#eab308] fill">star</span>
+<span class="font-label-sm text-label-sm text-on-surface">4.9</span>
+</div>
+<div class="absolute inset-0 card-gradient flex flex-col justify-end p-6 z-10">
+<div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+<span class="text-white/80 font-label-sm text-label-sm uppercase tracking-wider mb-1 block">Greece</span>
+<h3 class="text-white font-headline-md text-headline-md mb-2">Santorini</h3>
+<div class="flex items-center gap-4 text-white/90 font-body-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">flight</span> Flights</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">hotel</span> Hotels</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-white/20">
+<span class="text-white/80 font-label-sm">Starting from</span>
+<span class="text-white font-headline-md">$890</span>
 </div>
 </div>
-<!-- Flight Times & Route -->
-<div class="flex-grow flex items-center justify-between gap-4">
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group rounded-2xl overflow-hidden cursor-pointer relative aspect-[4/5] shadow-sm hover:shadow-lg transition-all duration-300 border border-outline-variant/20">
+<img alt="Bali" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A lush, vibrant view of terraced rice paddies in Bali, Indonesia. Morning light filters through palm trees, casting long shadows and illuminating the vivid green landscape. A small, traditional Balinese structure is visible in the distance. The mood is tranquil, exotic, and inviting, suitable for a high-end eco-tourism or travel platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiuGV4Tsel0xDziIq7XaZ1FQNJ2nmryxHJF3enSSMYgbiqtEvR7LOKHMSESjckkdE3lhP2Lc6RUdOOAM_cb3sP92xBz4ffcr1EIjrX4PEMHtJFC8h2T9OHMGAvIA82zmQoD9mHiNQSiugaOTQRqlMJv3tAzGnQ6dCt9aOw1DK7V93etwxACfP2Lw4xn0mUAJoFrEjjG6NDvV8bwFXY2Ddg7crAvFn1vftbyFvtvEw4SpocvJtlwBe3"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1 z-10 border border-white/10">
+<span class="material-symbols-outlined text-sm text-[#eab308] fill">star</span>
+<span class="font-label-sm text-label-sm text-on-surface">4.8</span>
+</div>
+<div class="absolute inset-0 card-gradient flex flex-col justify-end p-6 z-10">
+<div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+<span class="text-white/80 font-label-sm text-label-sm uppercase tracking-wider mb-1 block">Indonesia</span>
+<h3 class="text-white font-headline-md text-headline-md mb-2">Bali</h3>
+<div class="flex items-center gap-4 text-white/90 font-body-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">flight</span> Flights</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">hotel</span> Hotels</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-white/20">
+<span class="text-white/80 font-label-sm">Starting from</span>
+<span class="text-white font-headline-md">$650</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group rounded-2xl overflow-hidden cursor-pointer relative aspect-[4/5] shadow-sm hover:shadow-lg transition-all duration-300 border border-outline-variant/20">
+<img alt="Tokyo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A dynamic, modern twilight view of the Tokyo skyline featuring the iconic Tokyo Tower illuminated in bright orange against a deep blue evening sky. City lights twinkle below, conveying a bustling, energetic metropolitan atmosphere. The aesthetic is clean, technological, yet romantic, appealing to urban explorers and business travelers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEb_bnlbMduiClGkit5Q_NMQyVBU1ErxTTI1Ab89dinjqpFLuRCvpr2azuUvB5BLe0EgmahJZFZ0CMtewnrXIyJeE6i9jylgDOeVGV8iyAGjIsTaoN4yfL02tZ39rjETdaIOKkxfO6vxOafKy8HKwKGL7zDrIkWIbC9Ww5Q1GvQZwgk3zeYpqRJnodpT5NSsOq1F3xbPtkf6aOj7QB07X9vi4hJf0SOHtogAVx-a6mv7RJRyKtG0vb"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1 z-10 border border-white/10">
+<span class="material-symbols-outlined text-sm text-[#eab308] fill">star</span>
+<span class="font-label-sm text-label-sm text-on-surface">4.9</span>
+</div>
+<div class="absolute inset-0 card-gradient flex flex-col justify-end p-6 z-10">
+<div class="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+<span class="text-white/80 font-label-sm text-label-sm uppercase tracking-wider mb-1 block">Japan</span>
+<h3 class="text-white font-headline-md text-headline-md mb-2">Tokyo</h3>
+<div class="flex items-center gap-4 text-white/90 font-body-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">flight</span> Flights</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">hotel</span> Hotels</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-white/20">
+<span class="text-white/80 font-label-sm">Starting from</span>
+<span class="text-white font-headline-md">$1,200</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="md:hidden w-full mt-6 py-3 border border-outline text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-container transition-colors">
+            View all destinations
+        </button>
+</section>
+<!-- Features Section -->
+<section class="bg-surface-container-low py-xl">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Journey To The Skies Made Simple</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Experience a seamless booking process with premium perks and dedicated support every step of the way.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="bg-surface-container p-8 rounded-2xl shadow-sm border border-outline-variant/20 hover:shadow-md transition-shadow">
+<div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Best Price Guarantee</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">We match competitive prices on flights and hotels to ensure you get the best value for your premium travel experience.</p>
+</div>
+<!-- Feature 2 -->
+<div class="bg-surface-container p-8 rounded-2xl shadow-sm border border-outline-variant/20 hover:shadow-md transition-shadow">
+<div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">support_agent</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">24/7 Concierge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Our dedicated travel experts are available around the clock to assist with bookings, changes, and local recommendations.</p>
+</div>
+<!-- Feature 3 -->
+<div class="bg-surface-container p-8 rounded-2xl shadow-sm border border-outline-variant/20 hover:shadow-md transition-shadow">
+<div class="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">airline_seat_recline_extra</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Exclusive Upgrades</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Enjoy priority access to business class upgrades, lounge access, and premium hotel suites for our members.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Promo Banner -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<div class="relative rounded-3xl overflow-hidden bg-surface-container-high border border-outline-variant/20 text-white">
+<div class="absolute inset-0 z-0">
+<img alt="Beach aerial" class="w-full h-full object-cover opacity-40 mix-blend-overlay" data-alt="A pristine, overhead view of a secluded tropical beach. Soft white sand meets crystal clear, vibrant turquoise water. Gentle waves lap the shore. The lighting is bright and sunny, conveying a warm, relaxing, and luxurious vacation atmosphere. Perfect for a premium travel promotion banner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPJIo2NHC1ovVXnfVhM5PLbbsCV4xk-U9N-uJI24P2dKlrSWc4Ss-rGP7EQgyZiyMkym9RWhrEqKvdX_JijuqCQNT91FSnc0iG8ALbI_DKpjigHLr9mChznlyS6cfH-YLhjN99fMenkr_Q-mVp28zfqsqpyD2gGouqmNO5BZNUk08de10Q-kfUTkTs3k5sR2lqPkX_qqtC73HhumkvnlWR4bV5Fudk9AC7fkBzelVxhZ2M1fwFYYOe"/>
+</div>
+<div class="relative z-10 p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-xl text-center md:text-left">
+<span class="inline-block bg-white/20 backdrop-blur-md px-3 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-wider mb-4 border border-white/30">Limited Time Offer</span>
+<h2 class="font-headline-lg text-headline-lg mb-4 text-white">Island Escapes up to 30% Off</h2>
+<p class="font-body-lg text-body-lg text-white/90 mb-6">Book your tropical getaway before the end of the month and receive complimentary lounge access.</p>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-8 py-3 rounded-full hover:bg-primary-fixed-variant transition-colors shadow-lg">
+                        Claim Offer
+                    </button>
+</div>
+<div class="hidden md:block w-48 h-48 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shrink-0">
 <div class="text-center">
-<p class="font-headline-md text-headline-md font-bold text-on-surface">08:30</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant font-bold">JFK</p>
-</div>
-<div class="flex-grow flex flex-col items-center px-4 relative">
-<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">7h 15m</p>
-<div class="w-full h-[2px] bg-outline-variant/40 relative flex items-center justify-center">
-<span class="material-symbols-outlined absolute text-outline-variant bg-surface px-1 text-lg">flight</span>
-</div>
-<p class="font-label-sm text-label-sm text-secondary font-bold mt-1 bg-secondary-fixed/50 px-2 py-0.5 rounded-full">Direct</p>
-</div>
-<div class="text-center">
-<p class="font-headline-md text-headline-md font-bold text-on-surface">20:45</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant font-bold">LHR <span class="text-error text-[10px] align-top">+1</span></p>
-</div>
-</div>
-<!-- Price & Action -->
-<div class="flex flex-row md:flex-col items-center md:items-end justify-between md:justify-center border-t md:border-t-0 md:border-l border-outline-variant/20 pt-4 md:pt-0 md:pl-6 md:w-[160px] flex-shrink-0">
-<div class="text-left md:text-right">
-<p class="font-label-sm text-label-sm text-on-surface-variant line-through">$520</p>
-<p class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-primary">$450</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">Economy</p>
-</div>
-<button class="bg-primary text-white font-label-md text-label-md font-bold py-3 px-6 rounded-full hover:bg-primary-container transition-colors shadow-md mt-0 md:mt-3">Select</button>
-</div>
-</div>
-</div>
-<!-- Flight Card 2 -->
-<div class="bg-surface rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(0,0,0,0.03)] overflow-hidden transition-all hover:shadow-[0_8px_30px_rgba(29,78,216,0.08)] hover:border-primary/30">
-<div class="p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-6">
-<!-- Airline Info -->
-<div class="flex items-center gap-4 md:w-[200px] flex-shrink-0">
-<div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-error font-bold overflow-hidden border border-red-100">
-<img alt="Airline Logo" class="w-full h-full object-cover opacity-80 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2DS323Vh6qfOAnNyeeGuj5xNuA3nfCtO7evMLV5D9ajeqtZ9ilX66OgIc7RjWeET5FF07ruqmUibkHd2NsswpFJaz0q-xkEylHs3DnoqdUzPQiWY6hQ-ecUTdE9gvZ8x99WHCZsrL5RAipn9ILcUrtYlvsjt7p0mydSp4oT97BDsEDtpZjr3tC3EacBWchCQoAbF0AYHJjQp1X2CzkkKcTO2ER3EZp0a0iCbyOKmwE13Zb7gP9WnK"/>
-</div>
-<div>
-<p class="font-label-md text-label-md font-bold text-on-surface">Global Atlantic</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">GA-112 • Airbus A350</p>
-</div>
-</div>
-<!-- Flight Times & Route -->
-<div class="flex-grow flex items-center justify-between gap-4">
-<div class="text-center">
-<p class="font-headline-md text-headline-md font-bold text-on-surface">18:15</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant font-bold">JFK</p>
-</div>
-<div class="flex-grow flex flex-col items-center px-4 relative">
-<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">7h 30m</p>
-<div class="w-full h-[2px] bg-outline-variant/40 relative flex items-center justify-center">
-<span class="material-symbols-outlined absolute text-outline-variant bg-surface px-1 text-lg">flight</span>
-</div>
-<p class="font-label-sm text-label-sm text-secondary font-bold mt-1 bg-secondary-fixed/50 px-2 py-0.5 rounded-full">Direct</p>
-</div>
-<div class="text-center">
-<p class="font-headline-md text-headline-md font-bold text-on-surface">06:45</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant font-bold">LHR <span class="text-error text-[10px] align-top">+1</span></p>
-</div>
-</div>
-<!-- Price & Action -->
-<div class="flex flex-row md:flex-col items-center md:items-end justify-between md:justify-center border-t md:border-t-0 md:border-l border-outline-variant/20 pt-4 md:pt-0 md:pl-6 md:w-[160px] flex-shrink-0">
-<div class="text-left md:text-right">
-<p class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-on-surface">$485</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">Economy</p>
-</div>
-<button class="bg-surface text-primary border-2 border-primary font-label-md text-label-md font-bold py-2.5 px-6 rounded-full hover:bg-primary-container/5 transition-colors mt-0 md:mt-3">Select</button>
-</div>
-</div>
-</div>
-<!-- Flight Card 3 (1 Stop) -->
-<div class="bg-surface rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(0,0,0,0.03)] overflow-hidden transition-all hover:shadow-[0_8px_30px_rgba(29,78,216,0.08)] hover:border-primary/30">
-<div class="p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-6">
-<!-- Airline Info -->
-<div class="flex items-center gap-4 md:w-[200px] flex-shrink-0">
-<div class="w-10 h-10 rounded-full bg-yellow-50 flex items-center justify-center text-on-surface font-bold overflow-hidden border border-yellow-100">
-<img alt="Airline Logo" class="w-full h-full object-cover opacity-80 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQSXlSqJPe1lB3ZJHbHeykuUQJPkJh4JlxFwun83-ce9oRa4QkEpQ143989iHMkdsFg-xIjQjMvCJlPLBpP2u68z_45SEa2_A3HHMwEY2U7CckVrilCrlz65rLtpKoOgENQXksHqrFbCmnSIrAnJCQTioSe-2dTf1VOjah8E7YnGiAZON2KLmcfhz73G6NWZMWsIm0jumBTY7LCwcKuMqpUSbf-oeX8ozP23HGHL1ovLf0MW3XoJJo"/>
-</div>
-<div>
-<p class="font-label-md text-label-md font-bold text-on-surface">EuroConnect</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">EC-88 • Multiple</p>
-</div>
-</div>
-<!-- Flight Times & Route -->
-<div class="flex-grow flex items-center justify-between gap-4">
-<div class="text-center">
-<p class="font-headline-md text-headline-md font-bold text-on-surface">14:00</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant font-bold">JFK</p>
-</div>
-<div class="flex-grow flex flex-col items-center px-4 relative">
-<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">10h 20m</p>
-<div class="w-full h-[2px] bg-outline-variant/40 relative flex items-center justify-center">
-<div class="w-2 h-2 rounded-full bg-outline-variant absolute z-10 left-1/2 -translate-x-1/2"></div>
-</div>
-<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">1 Stop (CDG)</p>
-</div>
-<div class="text-center">
-<p class="font-headline-md text-headline-md font-bold text-on-surface">05:20</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant font-bold">LHR <span class="text-error text-[10px] align-top">+1</span></p>
-</div>
-</div>
-<!-- Price & Action -->
-<div class="flex flex-row md:flex-col items-center md:items-end justify-between md:justify-center border-t md:border-t-0 md:border-l border-outline-variant/20 pt-4 md:pt-0 md:pl-6 md:w-[160px] flex-shrink-0">
-<div class="text-left md:text-right">
-<p class="font-headline-lg-mobile text-headline-lg-mobile font-extrabold text-on-surface">$390</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant">Economy</p>
-</div>
-<button class="bg-surface text-primary border-2 border-primary font-label-md text-label-md font-bold py-2.5 px-6 rounded-full hover:bg-primary-container/5 transition-colors mt-0 md:mt-3">Select</button>
+<span class="block font-headline-lg text-headline-lg leading-none">-30%</span>
+<span class="block font-label-sm text-label-sm uppercase tracking-widest mt-1">Discount</span>
 </div>
 </div>
 </div>
 </div>
-<div class="mt-8 text-center pb-8">
-<button class="font-label-md text-label-md font-bold text-primary hover:text-primary-container transition-colors py-2 px-6 rounded-full border border-primary/20 hover:border-primary/50">Show More Flights</button>
+</section>
+<!-- Footer -->
+<footer class="w-full mt-xl bg-surface-container-low dark:bg-surface-container-low border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-xl max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary fill text-3xl">flight</span>
+<span class="font-headline-sm text-headline-sm text-on-surface dark:text-on-surface font-bold uppercase tracking-tighter">SKYWINGS</span>
 </div>
-</main>
-<!-- BottomNavBar (Mobile) -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface/90 backdrop-blur-2xl border-t border-outline-variant/20 shadow-lg md:hidden rounded-t-xl">
-<a class="flex flex-col items-center justify-center text-primary bg-primary-container/20 rounded-full px-4 py-1" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
-<span class="font-label-sm text-label-sm mt-1">Explore</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:scale-110 transition-transform" href="#">
-<span class="material-symbols-outlined">confirmation_number</span>
-<span class="font-label-sm text-label-sm mt-1">Bookings</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:scale-110 transition-transform" href="#">
-<span class="material-symbols-outlined">favorite</span>
-<span class="font-label-sm text-label-sm mt-1">Saved</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:scale-110 transition-transform" href="#">
-<span class="material-symbols-outlined">person</span>
-<span class="font-label-sm text-label-sm mt-1">Profile</span>
-</a>
-</nav>
+<p class="text-on-surface-variant font-body-sm">Elevating your travel experience with curated destinations and unparalleled service.</p>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap justify-between md:justify-end gap-x-12 gap-y-4">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all cursor-pointer" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all cursor-pointer" href="#">Support</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all cursor-pointer" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all cursor-pointer" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-body-sm text-body-sm hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all cursor-pointer" href="#">Careers</a>
+</div>
+<div class="col-span-1 md:col-span-4 mt-8 pt-8 border-t border-white/10 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-on-surface-variant font-body-sm text-body-sm">© 2024 SkyWings Aviation Group. All rights reserved.</span>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-all cursor-pointer" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-all cursor-pointer" href="#"><span class="material-symbols-outlined">share</span></a>
+</div>
+</div>
+</div>
+</footer>
 </body></html>

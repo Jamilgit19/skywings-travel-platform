@@ -1,96 +1,103 @@
 ---
-name: AeroVista
+name: Nocturnal Precision
 colors:
-  surface: '#faf8ff'
-  surface-dim: '#d2d9f4'
-  surface-bright: '#faf8ff'
-  surface-container-lowest: '#ffffff'
-  surface-container-low: '#f2f3ff'
-  surface-container: '#eaedff'
-  surface-container-high: '#e2e7ff'
-  surface-container-highest: '#dae2fd'
-  on-surface: '#131b2e'
-  on-surface-variant: '#434655'
-  inverse-surface: '#283044'
-  inverse-on-surface: '#eef0ff'
-  outline: '#747686'
-  outline-variant: '#c4c5d7'
-  surface-tint: '#2151da'
-  primary: '#0037b0'
-  on-primary: '#ffffff'
+  surface: '#0b1326'
+  surface-dim: '#0b1326'
+  surface-bright: '#31394d'
+  surface-container-lowest: '#060e20'
+  surface-container-low: '#131b2e'
+  surface-container: '#171f33'
+  surface-container-high: '#222a3d'
+  surface-container-highest: '#2d3449'
+  on-surface: '#dae2fd'
+  on-surface-variant: '#c4c5d7'
+  inverse-surface: '#dae2fd'
+  inverse-on-surface: '#283044'
+  outline: '#8e90a0'
+  outline-variant: '#434655'
+  surface-tint: '#b7c4ff'
+  primary: '#b7c4ff'
+  on-primary: '#002682'
   primary-container: '#1d4ed8'
   on-primary-container: '#cad3ff'
-  inverse-primary: '#b7c4ff'
-  secondary: '#0060ac'
-  on-secondary: '#ffffff'
-  secondary-container: '#64a8fe'
-  on-secondary-container: '#003c70'
-  tertiary: '#3d454a'
-  on-tertiary: '#ffffff'
-  tertiary-container: '#545d62'
-  on-tertiary-container: '#cdd6db'
-  error: '#ba1a1a'
-  on-error: '#ffffff'
-  error-container: '#ffdad6'
-  on-error-container: '#93000a'
+  inverse-primary: '#2151da'
+  secondary: '#7bd0ff'
+  on-secondary: '#00354a'
+  secondary-container: '#00a6e0'
+  on-secondary-container: '#00374d'
+  tertiary: '#ffb59c'
+  on-tertiary: '#5c1900'
+  tertiary-container: '#a73400'
+  on-tertiary-container: '#ffc9b7'
+  error: '#ffb4ab'
+  on-error: '#690005'
+  error-container: '#93000a'
+  on-error-container: '#ffdad6'
   primary-fixed: '#dce1ff'
   primary-fixed-dim: '#b7c4ff'
   on-primary-fixed: '#001551'
   on-primary-fixed-variant: '#0039b5'
-  secondary-fixed: '#d4e3ff'
-  secondary-fixed-dim: '#a4c9ff'
-  on-secondary-fixed: '#001c39'
-  on-secondary-fixed-variant: '#004883'
-  tertiary-fixed: '#dbe4ea'
-  tertiary-fixed-dim: '#bfc8ce'
-  on-tertiary-fixed: '#141d21'
-  on-tertiary-fixed-variant: '#3f484d'
-  background: '#faf8ff'
-  on-background: '#131b2e'
-  surface-variant: '#dae2fd'
+  secondary-fixed: '#c4e7ff'
+  secondary-fixed-dim: '#7bd0ff'
+  on-secondary-fixed: '#001e2c'
+  on-secondary-fixed-variant: '#004c69'
+  tertiary-fixed: '#ffdbcf'
+  tertiary-fixed-dim: '#ffb59c'
+  on-tertiary-fixed: '#390c00'
+  on-tertiary-fixed-variant: '#832700'
+  background: '#0b1326'
+  on-background: '#dae2fd'
+  surface-variant: '#2d3449'
 typography:
-  display-lg:
-    fontFamily: Manrope
+  headline-lg:
+    fontFamily: Hanken Grotesk
     fontSize: 48px
-    fontWeight: '800'
+    fontWeight: '700'
     lineHeight: 56px
     letterSpacing: -0.02em
-  headline-lg:
-    fontFamily: Manrope
+  headline-lg-mobile:
+    fontFamily: Hanken Grotesk
     fontSize: 32px
     fontWeight: '700'
     lineHeight: 40px
-  headline-lg-mobile:
-    fontFamily: Manrope
-    fontSize: 28px
-    fontWeight: '700'
-    lineHeight: 36px
+    letterSpacing: -0.02em
   headline-md:
-    fontFamily: Manrope
+    fontFamily: Hanken Grotesk
+    fontSize: 32px
+    fontWeight: '600'
+    lineHeight: 40px
+    letterSpacing: -0.01em
+  headline-sm:
+    fontFamily: Hanken Grotesk
     fontSize: 24px
     fontWeight: '600'
     lineHeight: 32px
   body-lg:
-    fontFamily: Manrope
+    fontFamily: Inter
     fontSize: 18px
     fontWeight: '400'
     lineHeight: 28px
   body-md:
-    fontFamily: Manrope
+    fontFamily: Inter
     fontSize: 16px
     fontWeight: '400'
     lineHeight: 24px
-  label-md:
-    fontFamily: Manrope
+  body-sm:
+    fontFamily: Inter
     fontSize: 14px
-    fontWeight: '600'
+    fontWeight: '400'
     lineHeight: 20px
-    letterSpacing: 0.01em
-  label-sm:
-    fontFamily: Manrope
-    fontSize: 12px
-    fontWeight: '700'
+  label-md:
+    fontFamily: Geist
+    fontSize: 14px
+    fontWeight: '500'
     lineHeight: 16px
+    letterSpacing: 0.02em
+  label-sm:
+    fontFamily: Geist
+    fontSize: 12px
+    fontWeight: '500'
+    lineHeight: 14px
     letterSpacing: 0.05em
 rounded:
   sm: 0.25rem
@@ -100,79 +107,52 @@ rounded:
   xl: 1.5rem
   full: 9999px
 spacing:
-  base: 8px
-  container-padding-mobile: 20px
-  container-padding-desktop: 64px
-  gutter: 16px
-  section-gap: 48px
+  base: 4px
+  xs: 8px
+  sm: 16px
+  md: 24px
+  lg: 40px
+  xl: 64px
+  gutter: 24px
+  margin-mobile: 16px
+  margin-desktop: 48px
 ---
 
 ## Brand & Style
+The brand personality is authoritative, sophisticated, and technologically advanced. It targets professional users who require high-density information environments that remain legible during long-duration usage. 
 
-The brand identity centers on the concept of "The Professional Explorer." It balances the reliability of an established airline with the excitement of global discovery. The visual language is defined by **Corporate Modernism**—clean, systematic, and highly functional—infused with **Glassmorphism** to reflect the ethereal quality of the sky and clouds.
-
-The design system prioritizes a high-end travel experience through generous whitespace, high-fidelity imagery, and a refined color palette. The target audience is mobile-first travelers who value efficiency and a premium aesthetic. The emotional response is one of calm confidence, clarity, and the "magic of flight."
+The design style is **Corporate Modern** with a **Minimalist** focus on hierarchy. It leverages a deep, immersive dark mode to reduce eye strain while maintaining a sense of premium quality. Visual interest is generated through precise typography and purposeful use of the primary brand color against a monochromatic foundation. The emotional response should be one of calm, focused efficiency and unwavering reliability.
 
 ## Colors
+The palette is anchored by **Deep Navy (#0f172a)** for the primary background, providing a rich, ink-like depth. **Slate (#1e293b)** serves as the secondary container color to establish visual hierarchy and separate content modules.
 
-The palette is rooted in a spectrum of atmospheric blues and crisp whites. 
-
-- **Primary (Sky Blue):** A bold, trustworthy blue used for primary actions, navigation highlights, and brand reinforcement.
-- **Secondary (Horizon Blue):** A lighter, vibrant blue used for secondary indicators and accentuating key features.
-- **Surface (Cloud Tint):** A very light blue-white used for backgrounds and container fills to soften the interface compared to pure white.
-- **Neutral (Midnight):** Deep navy used for high-contrast typography and essential UI borders, ensuring maximum legibility against light backgrounds.
-- **Accent (Success/Action):** Specifically reserved for interactive "Book" or "Confirm" states, often utilizing a gradient of the primary and secondary blues.
+The **Corporate Blue (#1d4ed8)** is the primary accent, reserved for high-priority actions and active states. To ensure this blue "pops," it is supported by a brighter **Sky Blue (#38bdf8)** for secondary indicators or interactive hover states. Typography utilizes **High-Contrast White (#f8fafc)** for headlines and **Cool Gray (#94a3b8)** for secondary text to ensure maximum readability and reduced cognitive load.
 
 ## Typography
+This design system utilizes a tiered typographic approach to balance character with utility. **Hanken Grotesk** is used for headlines to provide a sharp, contemporary professional feel. **Inter** is the workhorse for body copy, chosen for its exceptional legibility in dark mode and systematic feel. For technical data, labels, and developer-facing UI elements, **Geist** provides a precise, monospaced-influenced aesthetic.
 
-This design system utilizes **Manrope** for all levels to maintain a contemporary, geometric, yet highly legible feel. 
-
-- **Headlines:** Use tighter letter-spacing and heavier weights to create a strong visual anchor for travel destinations and promotional offers.
-- **Body Text:** Set with generous line heights to ensure readability during the high-stress activity of booking travel.
-- **Labels:** Uppercase styles are used sparingly for category tags (e.g., "WORLD-CLASS TRAVEL") to differentiate metadata from primary content.
-- **Hierarchy:** Contrast is achieved through weight variance rather than font switching, maintaining a unified professional aesthetic.
+Large headlines should use tight tracking and bold weights to command attention, while body text requires generous line heights to prevent "halo" effects on dark backgrounds.
 
 ## Layout & Spacing
+The layout follows a **Fluid Grid** model based on an 8px spatial rhythm. On desktop, a 12-column grid is used with 24px gutters. On mobile, the system collapses to a 4-column grid with 16px margins.
 
-The layout philosophy follows a **fluid grid** model with a focus on vertical rhythm and "breathing room."
-
-- **Mobile:** A 4-column grid with 20px side margins. Content cards typically span the full width or 2 columns for side-by-side comparison.
-- **Desktop:** A 12-column grid with a maximum content width of 1280px.
-- **Rhythm:** An 8px base unit governs all padding and margins. Vertical spacing between logical sections is intentionally large (48px+) to prevent the "clutter" common in travel booking sites.
-- **Safe Areas:** Interactive elements like buttons always maintain a minimum 44px hit area, regardless of their visual size.
+Spacing is used to create grouping rather than relying on heavy lines. Large vertical gaps (64px+) are encouraged between major sections to allow the dark background to provide visual "breathing room." Content containers should utilize consistent internal padding (24px) to maintain a structured, architectural feel.
 
 ## Elevation & Depth
+Depth is expressed through **Tonal Layering** rather than traditional shadows. Higher elevation levels are represented by lighter surface colors.
+- **Level 0 (Base):** #0f172a.
+- **Level 1 (Cards/Sections):** #1e293b.
+- **Level 2 (Modals/Popovers):** #334155.
 
-Hierarchy is established through **Glassmorphism** and **Soft Ambient Shadows**.
-
-- **Level 1 (Base):** Flat, Cloud Tint background (#F0F9FF).
-- **Level 2 (Cards/Containers):** Pure white backgrounds with a subtle, 1px border in a slightly darker blue tint. These use a very soft, diffused shadow (15% opacity, 20px blur) to appear "resting" on the surface.
-- **Level 3 (Overlays/Modals):** Heavy backdrop blur (20px+) with 80% white opacity. This creates the sensation of looking through a window into the sky.
-- **Z-Index:** Flight search bars and floating action buttons occupy the highest elevation, often using a primary color fill to "pop" against the blurs.
+To maintain structure without adding visual noise, use **Low-contrast outlines**. Borders should be 1px solid with a 10% white opacity (`rgba(255, 255, 255, 0.1)`). This creates a subtle "glint" effect that defines edges without breaking the immersive dark aesthetic.
 
 ## Shapes
-
-The shape language is "Rounded-Soft," mimicking the aerodynamic curves of aircraft and the softness of clouds.
-
-- **Standard Elements:** 0.5rem (8px) for input fields and small cards.
-- **Large Containers:** 1.5rem (24px) for hero sections and major content blocks to create a friendly, modern silhouette.
-- **Interactive Elements:** Buttons utilize a pill-shape (full rounding) to clearly distinguish them as touchpoints and provide a sense of motion and speed.
+The shape language is **Rounded**, reflecting a modern and approachable corporate identity. A standard radius of 8px (0.5rem) is used for buttons and input fields. Larger containers like cards use 16px (1rem), while high-level layout sections or modals use 24px (1.5rem). This geometric consistency ensures the UI feels cohesive and engineered.
 
 ## Components
-
-### Buttons
-- **Primary:** Pill-shaped, Primary Blue fill, White text. Uses a subtle horizontal gradient to suggest movement.
-- **Secondary:** Pill-shaped, Transparent fill, Primary Blue border and text.
-- **Ghost:** No border, Primary Blue text. Used for "Learn More" or "Cancel" actions.
-
-### Cards
-Travel destination cards use a fixed 4:5 aspect ratio for images. They feature a bottom-aligned text overlay with a slight glassmorphic gradient to ensure legibility over diverse photography.
-
-### Input Fields
-Booking inputs (Dates, Guests, Destination) use a "Large Label" style. The input container is white with a soft 1px blue border, turning into a 2px Primary Blue border on focus.
-
-### Chips & Tags
-Small, highly rounded (pill) tags used for status (e.g., "20% OFF" or "Business Class"). Backgrounds should be low-saturation versions of the primary blue to keep the focus on the headline.
-
-### Navigation
-Mobile navigation is anchored by a bottom bar for thumb-reachability, while Desktop uses a high-contrast top bar with clear utility icons for "Search," "Account," and "Saved Trips."
+- **Buttons:** Primary buttons use the corporate blue (#1d4ed8) with white text. Secondary buttons are ghost-style with the subtle 10% white border and white text.
+- **Input Fields:** Backgrounds should be #0f172a (darker than the container) to create an "inset" feel. Borders use the standard low-opacity white, turning primary blue on focus.
+- **Cards:** Use #1e293b with a subtle 1px border. No shadows are required; the color shift from the base background provides sufficient separation.
+- **Chips:** Small, pill-shaped elements using #334155 backgrounds and Geist Medium labels.
+- **Lists:** Separated by thin, 1px horizontal lines at 5% white opacity. Hover states should use a subtle #334155 background highlight.
+- **Status Indicators:** Use semantic colors (Green for Success, Red for Error) but desaturate them slightly (approx 10-15%) to prevent vibration against the deep navy background.

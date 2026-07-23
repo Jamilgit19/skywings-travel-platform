@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SkyWings - Flight Search Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "inverse-surface": "#dae2fd",
+                "primary-container": "#1d4ed8",
+                "on-primary-container": "#cad3ff",
+                "on-tertiary-fixed": "#390c00",
+                "on-secondary-fixed": "#001e2c",
+                "on-error": "#690005",
+                "secondary-container": "#00a6e0",
+                "on-surface-variant": "#c4c5d7",
+                "tertiary-container": "#a73400",
+                "surface-variant": "#2d3449",
+                "error": "#ffb4ab",
+                "primary-fixed": "#dce1ff",
+                "surface-container-high": "#222a3d",
+                "primary-fixed-dim": "#b7c4ff",
+                "outline-variant": "#434655",
+                "surface-dim": "#0b1326",
+                "surface": "#0b1326",
+                "on-error-container": "#ffdad6",
+                "surface-container-lowest": "#060e20",
+                "surface-container-highest": "#2d3449",
+                "tertiary-fixed-dim": "#ffb59c",
+                "error-container": "#93000a",
+                "tertiary": "#ffb59c",
+                "inverse-primary": "#2151da",
+                "surface-container": "#171f33",
+                "surface-tint": "#b7c4ff",
+                "on-primary-fixed": "#001551",
+                "secondary": "#7bd0ff",
+                "on-primary": "#002682",
+                "primary": "#b7c4ff",
+                "on-primary-fixed-variant": "#0039b5",
+                "secondary-fixed-dim": "#7bd0ff",
+                "tertiary-fixed": "#ffdbcf",
+                "on-secondary-fixed-variant": "#004c69",
+                "on-secondary": "#00354a",
+                "on-background": "#dae2fd",
+                "surface-container-low": "#131b2e",
+                "on-secondary-container": "#00374d",
+                "on-surface": "#dae2fd",
+                "on-tertiary": "#5c1900",
+                "on-tertiary-fixed-variant": "#832700",
+                "surface-bright": "#31394d",
+                "on-tertiary-container": "#ffc9b7",
+                "outline": "#8e90a0",
+                "inverse-on-surface": "#283044",
+                "secondary-fixed": "#c4e7ff",
+                "background": "#0b1326"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-mobile": "16px",
+                "margin-desktop": "48px",
+                "md": "24px",
+                "base": "4px",
+                "sm": "16px",
+                "xl": "64px",
+                "xs": "8px",
+                "lg": "40px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Hanken Grotesk"
+                ],
+                "label-md": [
+                        "Geist"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "Geist"
+                ],
+                "headline-lg-mobile": [
+                        "Hanken Grotesk"
+                ],
+                "headline-md": [
+                        "Hanken Grotesk"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-sm": [
+                        "Hanken Grotesk"
+                ],
+                "body-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "14px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-sm": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface border-b border-white/10 w-full top-0 sticky z-50">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-7xl mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary">SkyWings</div>
+<nav class="hidden md:flex space-x-8 h-full">
+<a class="text-primary dark:text-primary border-b-2 border-primary pb-1 flex items-center h-full hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:opacity-80 font-label-md text-label-md" href="#">Flights</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant flex items-center h-full hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:opacity-80 font-label-md text-label-md" href="#">Hotels</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant flex items-center h-full hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:opacity-80 font-label-md text-label-md" href="#">Packages</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="text-primary dark:text-primary hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:opacity-80 p-2">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-primary dark:text-primary hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:opacity-80 p-2">
+<span class="material-symbols-outlined" data-icon="manage_accounts">manage_accounts</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-lg pb-lg px-margin-mobile md:px-margin-desktop flex justify-center">
+<div class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Sidebar Filters (md:col-span-3) -->
+<aside class="hidden md:block md:col-span-3 space-y-6">
+<div class="bg-surface-container border border-outline-variant/30 rounded-xl p-6">
+<h2 class="font-headline-md text-headline-md text-primary mb-6">Filters</h2>
+<!-- Stops -->
+<div class="mb-6">
+<h3 class="font-label-md text-label-md text-on-surface mb-3">Stops</h3>
+<div class="space-y-2">
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary/20 bg-surface-container-high" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Direct (45)</span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input checked="" class="form-checkbox h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary/20 bg-surface-container-high" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">1 Stop (12)</span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary/20 bg-surface-container-high" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">2+ Stops (3)</span>
+</label>
+</div>
+</div>
+<!-- Airlines -->
+<div class="mb-6">
+<h3 class="font-label-md text-label-md text-on-surface mb-3">Airlines</h3>
+<div class="space-y-2">
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input checked="" class="form-checkbox h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary/20 bg-surface-container-high" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">SkyWings Air</span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary/20 bg-surface-container-high" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Global Connect</span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-primary rounded border-outline-variant focus:ring-primary/20 bg-surface-container-high" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Aero Atlantic</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Results Area (md:col-span-9) -->
+<section class="col-span-1 md:col-span-9">
+<!-- Search Summary Header -->
+<div class="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-2 flex items-center space-x-4">
+<span>JFK</span>
+<span class="material-symbols-outlined text-outline" data-icon="flight_takeoff">flight_takeoff</span>
+<span>LHR</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant flex items-center space-x-2">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_month">calendar_month</span>
+<span>Oct 15 - Oct 22</span>
+<span class="mx-2 text-outline-variant">•</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="person">person</span>
+<span>1 Passenger, Economy</span>
+</p>
+</div>
+<div class="mt-4 md:mt-0">
+<button class="bg-surface-container-high text-primary border border-primary px-6 py-2 rounded-full font-label-md text-label-md hover:bg-primary/10 transition-colors shadow-sm flex items-center space-x-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+<span>Modify Search</span>
+</button>
+</div>
+</div>
+<!-- Results List -->
+<div class="space-y-6">
+<!-- Recommended Card -->
+<article class="bg-surface-container border border-outline-variant/30 rounded-xl p-0 overflow-hidden relative group hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<div class="bg-primary/10 px-6 py-2 flex justify-between items-center border-b border-primary/20">
+<span class="font-label-sm text-label-sm text-primary flex items-center space-x-1">
+<span class="material-symbols-outlined text-[16px] filled-icon" data-icon="star" data-weight="fill">star</span>
+<span>Recommended</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lowest CO2 Emissions</span>
+</div>
+<div class="p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+<!-- Airline Info -->
+<div class="flex items-center space-x-4 w-full md:w-1/4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]" data-icon="airlines">airlines</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">SkyWings Air</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Flight SW-101</p>
+</div>
+</div>
+<!-- Flight Details -->
+<div class="flex-grow flex items-center justify-between w-full md:w-auto relative px-4">
+<div class="text-center z-10 bg-surface-container px-2 rounded">
+<p class="font-headline-md text-headline-md text-on-surface">19:30</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">JFK (New York)</p>
+</div>
+<div class="flex flex-col items-center flex-grow px-4 relative">
+<p class="font-label-sm text-label-sm text-primary mb-1">7h 45m</p>
+<div class="w-full h-px bg-outline-variant relative flex items-center justify-center">
+<div class="absolute left-0 w-2 h-2 rounded-full bg-outline-variant"></div>
+<span class="material-symbols-outlined text-primary text-[20px] bg-surface-container px-1" data-icon="flight">flight</span>
+<div class="absolute right-0 w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 text-center bg-surface-container-high px-2 py-0.5 rounded-full">Direct</p>
+</div>
+<div class="text-center z-10 bg-surface-container px-2 rounded">
+<p class="font-headline-md text-headline-md text-on-surface">07:15 <sup class="text-label-sm text-primary">+1</sup></p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">LHR (London)</p>
+</div>
+</div>
+<!-- Price & Action -->
+<div class="flex flex-col items-end w-full md:w-1/4 border-t md:border-t-0 md:border-l border-outline-variant/30 pt-4 md:pt-0 pl-0 md:pl-6">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Price per passenger</p>
+<p class="font-headline-lg text-headline-lg text-primary mb-4">$450</p>
+<button class="w-full bg-primary text-on-primary-fixed px-6 py-3 rounded-full font-label-md text-label-md hover:bg-primary-fixed-dim transition-colors shadow-sm">Select Flight</button>
+</div>
+</div>
+</article>
+<!-- Standard Card -->
+<article class="bg-surface-container border border-outline-variant/30 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 hover:shadow-lg hover:border-outline transition-all duration-300">
+<!-- Airline Info -->
+<div class="flex items-center space-x-4 w-full md:w-1/4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[24px]" data-icon="airlines">airlines</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Global Connect</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Flight GC-402</p>
+</div>
+</div>
+<!-- Flight Details -->
+<div class="flex-grow flex items-center justify-between w-full md:w-auto relative px-4">
+<div class="text-center z-10 bg-surface-container px-2 rounded">
+<p class="font-headline-md text-headline-md text-on-surface">22:00</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">JFK (New York)</p>
+</div>
+<div class="flex flex-col items-center flex-grow px-4 relative">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">8h 15m</p>
+<div class="w-full h-px bg-outline-variant relative flex items-center justify-center">
+<div class="absolute left-0 w-2 h-2 rounded-full bg-outline-variant"></div>
+<span class="material-symbols-outlined text-outline-variant text-[20px] bg-surface-container px-1" data-icon="flight">flight</span>
+<div class="absolute right-0 w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1 text-center bg-surface-container-high px-2 py-0.5 rounded-full">Direct</p>
+</div>
+<div class="text-center z-10 bg-surface-container px-2 rounded">
+<p class="font-headline-md text-headline-md text-on-surface">09:15 <sup class="text-label-sm text-primary">+1</sup></p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">LHR (London)</p>
+</div>
+</div>
+<!-- Price & Action -->
+<div class="flex flex-col items-end w-full md:w-1/4 border-t md:border-t-0 md:border-l border-outline-variant/30 pt-4 md:pt-0 pl-0 md:pl-6">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Price per passenger</p>
+<p class="font-headline-lg text-headline-lg text-on-surface mb-4">$485</p>
+<button class="w-full bg-transparent text-primary border border-primary px-6 py-3 rounded-full font-label-md text-label-md hover:bg-primary/10 transition-colors">Select Flight</button>
+</div>
+</article>
+</div>
+<div class="mt-8 text-center">
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center justify-center mx-auto space-x-2">
+<span>Show More Flights</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-low border-t border-white/5 w-full mt-xl mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-xl max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface dark:text-on-surface mb-4">SkyWings</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-surface-variant">© 2024 SkyWings Aviation Group. All rights reserved.</p>
+</div>
+<div class="col-span-1">
+<h3 class="font-label-md text-label-md text-primary dark:text-primary mb-4">Links</h3>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant dark:text-on-surface-variant">
+<li><a class="hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all cursor-pointer" href="#">About Us</a></li>
+<li><a class="hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all cursor-pointer" href="#">Support</a></li>
+<li><a class="hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all cursor-pointer" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h3 class="font-label-md text-label-md text-primary dark:text-primary mb-4">Legal</h3>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant dark:text-on-surface-variant">
+<li><a class="hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all cursor-pointer" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all cursor-pointer" href="#">Careers</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

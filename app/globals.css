@@ -2,65 +2,110 @@
 
 /* ===================================
    SKYWINGS DESIGN SYSTEM
-   Premium Travel Agency Tokens
+   Nocturnal Precision — Dark Theme
    =================================== */
 
 @theme inline {
   /* Fonts */
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-display: var(--font-playfair), Georgia, serif;
-  --font-mono: var(--font-jetbrains), 'Courier New', monospace;
+  --font-headline-lg: var(--font-hanken), sans-serif;
+  --font-headline-md: var(--font-hanken), sans-serif;
+  --font-headline-sm: var(--font-hanken), sans-serif;
+  --font-body-lg: var(--font-inter), sans-serif;
+  --font-body-md: var(--font-inter), sans-serif;
+  --font-body-sm: var(--font-inter), sans-serif;
+  --font-label-md: var(--font-geist), monospace;
+  --font-label-sm: var(--font-geist), monospace;
 
-  /* Brand Colors */
-  --color-background: #F8FAFC;
-  --color-background-secondary: #F1F5F9;
-  --color-card: #FFFFFF;
-  --color-foreground: #0F172A;
-  --color-foreground-secondary: #64748B;
-  --color-brand: #0B4F8A;
-  --color-brand-light: #1e6db5;
-  --color-cta: #2563EB;
-  --color-cta-hover: #1d4ed8;
-  --color-navy: #082F49;
-  --color-sky: #38BDF8;
-  --color-sky-light: #e0f2fe;
-  --color-success: #16A34A;
-  --color-warning: #D97706;
-  --color-error: #DC2626;
-  --color-pending: #CA8A04;
-  --color-cancelled: #991B1B;
+  /* Brand Colors from DESIGN.md */
+  --color-surface: #0b1326;
+  --color-surface-dim: #0b1326;
+  --color-surface-bright: #31394d;
+  --color-surface-container-lowest: #060e20;
+  --color-surface-container-low: #131b2e;
+  --color-surface-container: #171f33;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container-highest: #2d3449;
+  --color-on-surface: #dae2fd;
+  --color-on-surface-variant: #c4c5d7;
+  --color-inverse-surface: #dae2fd;
+  --color-inverse-on-surface: #283044;
+  --color-outline: #8e90a0;
+  --color-outline-variant: #434655;
+  --color-surface-tint: #b7c4ff;
+  --color-primary: #b7c4ff;
+  --color-on-primary: #002682;
+  --color-primary-container: #1d4ed8;
+  --color-on-primary-container: #cad3ff;
+  --color-inverse-primary: #2151da;
+  --color-secondary: #7bd0ff;
+  --color-on-secondary: #00354a;
+  --color-secondary-container: #00a6e0;
+  --color-on-secondary-container: #00374d;
+  --color-tertiary: #ffb59c;
+  --color-on-tertiary: #5c1900;
+  --color-tertiary-container: #a73400;
+  --color-on-tertiary-container: #ffc9b7;
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-primary-fixed: #dce1ff;
+  --color-primary-fixed-dim: #b7c4ff;
+  --color-on-primary-fixed: #001551;
+  --color-on-primary-fixed-variant: #0039b5;
+  --color-secondary-fixed: #c4e7ff;
+  --color-secondary-fixed-dim: #7bd0ff;
+  --color-on-secondary-fixed: #001e2c;
+  --color-on-secondary-fixed-variant: #004c69;
+  --color-tertiary-fixed: #ffdbcf;
+  --color-tertiary-fixed-dim: #ffb59c;
+  --color-on-tertiary-fixed: #390c00;
+  --color-on-tertiary-fixed-variant: #832700;
+  --color-background: #0b1326;
+  --color-on-background: #dae2fd;
+  --color-surface-variant: #2d3449;
 
-  /* Spacing (8px grid) */
-  --spacing-1: 8px;
-  --spacing-2: 16px;
-  --spacing-3: 24px;
-  --spacing-4: 32px;
-  --spacing-5: 40px;
-  --spacing-6: 48px;
-  --spacing-8: 64px;
-  --spacing-10: 80px;
-  --spacing-12: 96px;
-  --spacing-15: 120px;
+  /* Spacing (4px base rhythm) */
+  --spacing-base: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 64px;
+  --spacing-gutter: 24px;
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 48px;
 
   /* Border Radius */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  --radius-sm: 0.25rem;
+  --radius-DEFAULT: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-card: 0 4px 20px rgba(15, 23, 42, 0.06);
-  --shadow-card-hover: 0 12px 35px rgba(15, 23, 42, 0.12);
-  --shadow-header: 0 1px 3px rgba(15, 23, 42, 0.08);
-  --shadow-dropdown: 0 10px 40px rgba(15, 23, 42, 0.15);
-  --shadow-button: 0 2px 8px rgba(37, 99, 235, 0.3);
+  --shadow-ambient: 0 4px 20px rgba(0, 0, 0, 0.2);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --shadow-card-hover: 0 12px 35px rgba(0, 0, 0, 0.3);
 
   /* Transitions */
   --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
   --duration-fast: 0.2s;
   --duration-normal: 0.35s;
   --duration-slow: 0.5s;
+}
+
+/* ===================================
+   MATERIAL SYMBOLS SUPPORT
+   =================================== */
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.material-symbols-outlined.fill,
+.icon-filled {
+  font-variation-settings: 'FILL' 1;
 }
 
 /* ===================================
@@ -81,8 +126,8 @@ html {
 
 body {
   background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-sans);
+  color: var(--color-on-background);
+  font-family: var(--font-body-md);
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
@@ -95,52 +140,57 @@ body {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.15;
   font-weight: 700;
-  color: var(--color-foreground);
+  color: var(--color-on-background);
 }
 
 .heading-hero {
-  font-family: var(--font-display);
-  font-size: clamp(36px, 5vw, 72px);
-  line-height: 1.1;
+  font-family: var(--font-headline-lg);
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 56px;
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--color-on-background);
 }
 
 .heading-section {
-  font-family: var(--font-display);
+  font-family: var(--font-headline-lg);
   font-size: clamp(28px, 3.5vw, 48px);
-  line-height: 1.15;
+  line-height: 56px;
   font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-on-background);
 }
 
 .heading-card {
-  font-size: clamp(18px, 1.5vw, 22px);
+  font-family: var(--font-headline-sm);
+  font-size: 24px;
+  line-height: 32px;
   font-weight: 600;
+  color: var(--color-on-surface);
 }
 
 .text-body {
-  font-size: clamp(15px, 1.1vw, 17px);
-  line-height: 1.6;
-  color: var(--color-foreground-secondary);
+  font-family: var(--font-body-md);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-on-surface-variant);
 }
 
 .text-label {
+  font-family: var(--font-label-sm);
   font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  line-height: 1.3;
-  font-weight: 600;
-  color: var(--color-foreground-secondary);
+  letter-spacing: 0.05em;
+  line-height: 14px;
+  font-weight: 500;
+  color: var(--color-primary);
 }
 
 .text-price {
-  font-size: clamp(28px, 2.5vw, 40px);
+  font-family: var(--font-headline-lg);
+  font-size: clamp(28px, 2.5vw, 48px);
   font-weight: 700;
-}
-
-.text-code {
-  font-family: var(--font-mono);
-  font-size: clamp(15px, 1.1vw, 17px);
+  color: var(--color-primary);
 }
 
 /* ===================================
@@ -149,52 +199,38 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: var(--spacing-margin-mobile);
+  padding-right: var(--spacing-margin-mobile);
 }
 
 @media (min-width: 768px) {
   .container {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
   }
 }
 
 @media (min-width: 1024px) {
   .container {
-    padding-left: 64px;
-    padding-right: 64px;
+    padding-left: var(--spacing-margin-desktop);
+    padding-right: var(--spacing-margin-desktop);
   }
 }
 
 .section-spacing {
-  padding-top: 56px;
-  padding-bottom: 56px;
-}
-
-@media (min-width: 768px) {
-  .section-spacing {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section-spacing {
-    padding-top: 96px;
-    padding-bottom: 96px;
-  }
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
 }
 
 /* ===================================
-   CARD STYLES
+   CARD STYLES — Dark Tonal Layering
    =================================== */
 
 .card {
-  background: var(--color-card);
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: var(--color-surface-container);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   box-shadow: var(--shadow-card);
   transition: all var(--duration-normal) var(--ease-smooth);
@@ -202,13 +238,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .card:hover {
   box-shadow: var(--shadow-card-hover);
+  border-color: rgba(183, 196, 255, 0.2);
   transform: translateY(-3px);
 }
 
 .card-flat {
-  background: var(--color-card);
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: var(--color-surface-container);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
+}
+
+/* ===================================
+   GLASS PANEL (from code2.html)
+   =================================== */
+
+.glass-panel {
+  background: rgba(11, 19, 38, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ===================================
@@ -221,46 +269,47 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   gap: 8px;
   font-weight: 600;
+  font-family: var(--font-label-md);
   border-radius: var(--radius-full);
   transition: all var(--duration-fast) var(--ease-smooth);
   cursor: pointer;
   border: none;
   outline: none;
-  font-family: inherit;
   text-decoration: none;
   white-space: nowrap;
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--color-cta);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
 .btn-primary {
-  background: var(--color-cta);
+  background: var(--color-primary-container);
   color: white;
   padding: 12px 32px;
-  font-size: 15px;
-  box-shadow: var(--shadow-button);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.4);
 }
 
 .btn-primary:hover {
-  background: var(--color-cta-hover);
+  background: var(--color-inverse-primary);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 4px 16px rgba(29, 78, 216, 0.5);
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--color-foreground);
+  color: var(--color-on-surface);
   padding: 12px 32px;
-  font-size: 15px;
-  border: 1px solid rgba(15, 23, 42, 0.15);
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-secondary:hover {
-  background: rgba(15, 23, 42, 0.04);
-  border-color: rgba(15, 23, 42, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn-sm {
@@ -270,7 +319,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-lg {
   padding: 16px 40px;
-  font-size: 17px;
+  font-size: 14px;
+  letter-spacing: 0.02em;
 }
 
 .btn-icon {
@@ -281,30 +331,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===================================
-   FORM STYLES
+   FORM STYLES — Dark Inset Fields
    =================================== */
 
 .input {
   width: 100%;
   padding: 12px 16px;
-  font-size: 15px;
-  font-family: inherit;
-  color: var(--color-foreground);
-  background: var(--color-card);
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  font-size: 16px;
+  font-family: var(--font-body-md);
+  color: var(--color-on-surface);
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
   border-radius: var(--radius-md);
   transition: all var(--duration-fast) var(--ease-smooth);
   outline: none;
 }
 
 .input:focus {
-  border-color: var(--color-cta);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  border-color: var(--color-primary-container);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2);
 }
 
 .input::placeholder {
-  color: var(--color-foreground-secondary);
-  opacity: 0.6;
+  color: var(--color-outline);
+  opacity: 0.7;
 }
 
 /* ===================================
@@ -342,19 +392,19 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+    box-shadow: 0 0 0 0 rgba(183, 196, 255, 0.4);
   }
   50% {
-    box-shadow: 0 0 0 12px rgba(37, 99, 235, 0);
+    box-shadow: 0 0 0 12px rgba(183, 196, 255, 0);
   }
 }
 
 .skeleton {
   background: linear-gradient(
     90deg,
-    var(--color-background-secondary) 25%,
-    rgba(241, 245, 249, 0.5) 50%,
-    var(--color-background-secondary) 75%
+    var(--color-surface-container-high) 25%,
+    var(--color-surface-container-highest) 50%,
+    var(--color-surface-container-high) 75%
   );
   background-size: 200% 100%;
   animation: shimmer 1.8s ease-in-out infinite;
@@ -374,7 +424,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===================================
-   SCROLLBAR
+   SCROLLBAR — Dark Theme
    =================================== */
 
 ::-webkit-scrollbar {
@@ -387,30 +437,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(15, 23, 42, 0.15);
+  background: rgba(183, 196, 255, 0.15);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(15, 23, 42, 0.25);
+  background: rgba(183, 196, 255, 0.25);
 }
 
 /* ===================================
-   UTILITIES
+   UTILITIES — Dark Theme
    =================================== */
 
 .glass {
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(11, 19, 38, 0.85);
 }
 
-.gradient-hero {
-  background: linear-gradient(135deg, #082F49 0%, #0B4F8A 50%, #2563EB 100%);
+.hero-gradient {
+  background: linear-gradient(to bottom, rgba(11, 19, 38, 0.4), rgba(11, 19, 38, 0.1));
+}
+
+.card-gradient {
+  background: linear-gradient(to top, rgba(11, 19, 38, 0.9) 0%, rgba(11, 19, 38, 0) 50%);
+}
+
+.btn-primary-gradient {
+  background: linear-gradient(90deg, #1d4ed8 0%, #2151da 100%);
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #0B4F8A 0%, #2563EB 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
