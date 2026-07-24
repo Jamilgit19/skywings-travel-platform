@@ -104,7 +104,7 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="heading-hero text-white drop-shadow-lg leading-tight mb-2"
+                className="heading-hero text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/60 drop-shadow-xl leading-tight mb-4"
               >
                 Your Adventure Awaits
               </motion.h1>
@@ -216,11 +216,11 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {features.map((feature, index) => (
                 <AnimatedSection key={feature.title} delay={index * 0.15}>
-                  <div className="bg-surface-container p-8 rounded-2xl shadow-sm border border-outline-variant/20 hover:shadow-md transition-shadow">
-                    <div className="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
+                  <div className="bg-surface-container/50 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-outline-variant/20 hover:shadow-xl hover:border-primary/30 hover:-translate-y-2 transition-all duration-300 group">
+                    <div className="w-14 h-14 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                       <span className="material-symbols-outlined text-3xl">{feature.icon}</span>
                     </div>
-                    <h3 className="heading-card mb-3">{feature.title}</h3>
+                    <h3 className="heading-card mb-3 group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
                     <p className="text-body">{feature.description}</p>
                   </div>
                 </AnimatedSection>
