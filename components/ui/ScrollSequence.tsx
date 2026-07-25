@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { useScroll, useTransform, useSpring, motion } from "framer-motion";
 
 interface ScrollSequenceProps {
@@ -14,7 +14,7 @@ export default function ScrollSequence({
 }: ScrollSequenceProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [images, setImages] = useState<HTMLImageElement[]>([]);
+  const imagesRef = useRef<HTMLImageElement[]>([]);
   const [imagesLoaded, setImagesLoaded] = useState(0);
   const [isReady, setIsReady] = useState(false);
 
@@ -66,7 +66,7 @@ export default function ScrollSequence({
       };
       loadedImages.push(img);
     }
-    setImages(loadedImages);
+    imagesRef.current = loadedImages;
 
     return () => {
       isMounted = false;
@@ -74,7 +74,8 @@ export default function ScrollSequence({
   }, [frameCount, framePrefix]);
 
   // Draw frame on Canvas with Retina / High-DPI support
-  const drawFrame = (index: number) => {
+  const drawFrame = useCallback((index: number) => {
+    const images = imagesRef.current;
     if (images.length === 0) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -119,7 +120,7 @@ export default function ScrollSequence({
       ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
       ctx.restore();
     }
-  };
+  }, []);
 
   // Subscribe to frame index changes
   useEffect(() => {
@@ -128,7 +129,7 @@ export default function ScrollSequence({
       drawFrame(clampedIndex);
     });
     return () => unsubscribe();
-  }, [frameIndex, images, frameCount]);
+  }, [frameIndex, frameCount, drawFrame]);
 
   // Handle window resize
   useEffect(() => {
@@ -139,7 +140,7 @@ export default function ScrollSequence({
     window.addEventListener("resize", handleResize);
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
-  }, [frameIndex, images, frameCount]);
+  }, [frameIndex, frameCount, drawFrame]);
 
   return (
     <div ref={containerRef} className="relative h-[450vh] bg-[#030712] w-full">
