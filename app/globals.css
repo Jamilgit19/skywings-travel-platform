@@ -66,6 +66,13 @@
   --color-surface-variant: #2d3449;
 
   /* Custom Spacing Variables */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 48px;
+  --spacing-2xl: 64px;
+  --spacing-3xl: 96px;
   --spacing-gutter: 24px;
   --spacing-margin-mobile: 16px;
   --spacing-margin-desktop: 48px;
@@ -96,6 +103,10 @@
 
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .material-symbols-outlined.fill,
 .icon-filled {
@@ -331,6 +342,7 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
   text-decoration: none;
   white-space: nowrap;
+  line-height: 1;
 }
 
 .btn:focus-visible {

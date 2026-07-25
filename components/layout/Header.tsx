@@ -120,15 +120,15 @@ export default function Header() {
               aria-label="Select currency"
             >
               <span className="material-symbols-outlined text-[18px]">language</span>
-              <span className="text-[13px] font-semibold">USD</span>
+              <span className="text-[13px] font-semibold leading-none pt-[2px]">USD</span>
             </button>
 
             {/* CTA */}
             <Link
               href="/account"
-              className="hidden md:inline-flex items-center justify-center gap-2 bg-white text-surface text-[14px] font-bold tracking-wide px-6 py-2.5 rounded-full hover:bg-primary-fixed hover:text-on-primary-fixed transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transform hover:-translate-y-0.5"
+              className="hidden md:inline-flex items-center justify-center gap-2 bg-white text-surface text-[14px] font-bold tracking-wide px-6 py-2.5 rounded-full hover:bg-primary-fixed hover:text-on-primary-fixed transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transform hover:-translate-y-0.5 leading-none"
             >
-              Sign In
+              <span className="pt-[1px]">Sign In</span>
               <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </Link>
 
