@@ -14,7 +14,7 @@ export default function Footer() {
                 SKYWINGS
               </span>
             </div>
-            <p className="text-on-surface-variant font-body-md leading-relaxed">
+            <p className="text-on-surface-variant font-body-md leading-relaxed w-full">
               Elevating your travel experience with curated destinations, luxury accommodations, and unparalleled service.
             </p>
           </div>
