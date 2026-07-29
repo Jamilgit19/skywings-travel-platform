@@ -205,11 +205,11 @@ export default function HomePage() {
             ============================= */}
         <section className="bg-surface-container-low section-spacing">
           <div className="container">
-            <AnimatedSection className="text-center mb-12 max-w-3xl mx-auto">
+            <AnimatedSection className="w-full text-center mb-12">
               <h2 className="heading-section mb-4">
                 Journey To The Skies Made Simple
               </h2>
-              <p className="text-body max-w-2xl mx-auto text-left md:text-center">
+              <p className="text-body max-w-2xl mx-auto">
                 Experience a seamless booking process with premium perks and dedicated support every step of the way.
               </p>
             </AnimatedSection>
@@ -250,14 +250,14 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="relative z-10 p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
-                  <div className="w-full md:flex-1 max-w-2xl text-left flex flex-col items-start">
+                  <div className="w-full md:flex-1 max-w-2xl text-left">
                     <span className="inline-flex items-center bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-label-sm uppercase tracking-wider mb-4 border border-white/30 whitespace-nowrap badge-pill font-bold">
                       Limited Time Offer
                     </span>
-                    <h2 className="heading-section text-white mb-3">
+                    <h2 className="heading-section text-white mb-3 block w-full">
                       Island Escapes up to 30% Off
                     </h2>
-                    <p className="text-body-lg text-white/90 mb-6 max-w-xl">
+                    <p className="text-body-lg text-white/90 mb-6 max-w-xl block w-full">
                       Book your tropical getaway before the end of the month and receive complimentary lounge access.
                     </p>
                     <Link
