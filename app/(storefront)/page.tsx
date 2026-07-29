@@ -205,14 +205,18 @@ export default function HomePage() {
             ============================= */}
         <section className="bg-surface-container-low section-spacing">
           <div className="container">
-            <AnimatedSection className="w-full text-center mb-12">
-              <h2 className="heading-section mb-4">
-                Journey To The Skies Made Simple
-              </h2>
-              <p className="text-body max-w-2xl mx-auto">
-                Experience a seamless booking process with premium perks and dedicated support every step of the way.
-              </p>
-            </AnimatedSection>
+            <div className="w-full text-center mb-12">
+              <AnimatedSection className="w-full">
+                <h2 className="heading-section mb-4">
+                  Journey To The Skies Made Simple
+                </h2>
+                <div className="w-full flex justify-center">
+                  <p className="text-body" style={{maxWidth: '42rem'}}>
+                    Experience a seamless booking process with premium perks and dedicated support every step of the way.
+                  </p>
+                </div>
+              </AnimatedSection>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {features.map((feature, index) => (
@@ -250,14 +254,14 @@ export default function HomePage() {
                   />
                 </div>
                 <div className="relative z-10 p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
-                  <div className="w-full md:flex-1 max-w-2xl text-left">
+                  <div className="w-full md:flex-1" style={{maxWidth: '42rem'}}>
                     <span className="inline-flex items-center bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-label-sm uppercase tracking-wider mb-4 border border-white/30 whitespace-nowrap badge-pill font-bold">
                       Limited Time Offer
                     </span>
-                    <h2 className="heading-section text-white mb-3 block w-full">
+                    <h2 className="heading-section text-white mb-3" style={{width: '100%'}}>
                       Island Escapes up to 30% Off
                     </h2>
-                    <p className="text-body-lg text-white/90 mb-6 max-w-xl block w-full">
+                    <p className="text-body-lg text-white/90 mb-6" style={{width: '100%'}}>
                       Book your tropical getaway before the end of the month and receive complimentary lounge access.
                     </p>
                     <Link
