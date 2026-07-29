@@ -31,9 +31,9 @@ export default function SearchWidget() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="glass-panel rounded-2xl shadow-lg border border-surface-dim overflow-hidden bg-surface-container">
+      <div className="glass-panel rounded-2xl shadow-2xl border border-white/10 overflow-hidden">
         {/* Tabs */}
-        <div className="flex border-b border-outline-variant/30 bg-surface/50">
+        <div className="flex border-b border-white/5 bg-surface-container-lowest/40">
           {([
             { value: "roundtrip" as TripType, label: "Flights", icon: "flight" },
             { value: "oneway" as TripType, label: "Hotels", icon: "hotel" },
@@ -43,20 +43,27 @@ export default function SearchWidget() {
               key={tab.value}
               type="button"
               onClick={() => setTripType(tab.value)}
-              className={`flex-1 py-4 flex items-center justify-center gap-2 transition-colors ${
+              className={`flex-1 py-4 flex items-center justify-center gap-2.5 transition-all duration-300 relative ${
                 tripType === tab.value
-                  ? "border-b-2 border-primary text-primary bg-surface-container-high"
-                  : "text-on-surface-variant hover:bg-surface-container-high/50"
+                  ? "text-primary"
+                  : "text-on-surface-variant hover:text-on-surface hover:bg-white/3"
               }`}
             >
-              <span className="material-symbols-outlined">{tab.icon}</span>
-              <span className="font-label-md text-label-md">{tab.label}</span>
+              <span className={`material-symbols-outlined text-[20px] transition-all duration-300 ${tripType === tab.value ? 'fill' : ''}`}>{tab.icon}</span>
+              <span className="font-label-md text-label-md font-semibold">{tab.label}</span>
+              {tripType === tab.value && (
+                <motion.div
+                  layoutId="searchTabIndicator"
+                  className="absolute bottom-0 left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent"
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                />
+              )}
             </button>
           ))}
         </div>
 
         {/* Search Form */}
-        <form onSubmit={handleSearch} className="p-4 md:p-6 bg-surface-container">
+        <form onSubmit={handleSearch} className="p-5 md:p-6 bg-surface-container/60">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
             
             {/* From & To Wrapper (Spans 2 columns on lg) */}
@@ -132,9 +139,9 @@ export default function SearchWidget() {
             {/* Submit */}
             <button
               type="submit"
-              className="lg:col-span-1 w-full h-[64px] px-6 bg-primary text-on-primary rounded-xl font-bold text-[15px] tracking-wide flex items-center justify-center gap-2 hover:bg-primary-fixed-variant transition-all shadow-md shrink-0 cursor-pointer active:scale-95"
+              className="lg:col-span-1 w-full h-[64px] px-6 bg-gradient-to-r from-[#1d4ed8] via-[#3b82f6] to-[#2563eb] text-white rounded-xl font-bold text-[15px] tracking-wide flex items-center justify-center gap-2.5 hover:from-[#2563eb] hover:via-[#60a5fa] hover:to-[#3b82f6] transition-all duration-300 shadow-[0_4px_20px_rgba(29,78,216,0.4)] hover:shadow-[0_8px_30px_rgba(29,78,216,0.5)] shrink-0 cursor-pointer active:scale-95 group/search"
             >
-              <span className="material-symbols-outlined text-[20px]">search</span>
+              <span className="material-symbols-outlined text-[20px] transition-transform duration-300 group-hover/search:rotate-12">search</span>
               <span>Search</span>
             </button>
           </div>

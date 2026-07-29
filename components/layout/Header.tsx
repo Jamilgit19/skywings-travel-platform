@@ -95,7 +95,7 @@ export default function Header() {
                   {isActive && (
                     <motion.div
                       layoutId="navIndicatorDesktop"
-                      className="absolute inset-0 bg-white/10 rounded-full border border-white/5"
+                      className="absolute inset-0 bg-white/10 rounded-full border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]"
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -126,10 +126,10 @@ export default function Header() {
             {/* CTA */}
             <Link
               href="/account"
-              className="hidden md:inline-flex items-center justify-center gap-2 bg-white text-surface text-[14px] font-bold tracking-wide px-6 py-2.5 rounded-full hover:bg-primary-fixed hover:text-on-primary-fixed transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transform hover:-translate-y-0.5 leading-none"
+              className="hidden md:inline-flex items-center justify-center gap-2 bg-gradient-to-r from-white via-white to-white/90 text-surface text-[14px] font-bold tracking-wide px-6 py-2.5 rounded-full hover:from-primary-fixed hover:to-primary-fixed-dim hover:text-on-primary-fixed transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(183,196,255,0.3)] transform hover:-translate-y-0.5 leading-none group/signin"
             >
               <span className="pt-[1px]">Sign In</span>
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              <span className="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover/signin:translate-x-0.5">arrow_forward</span>
             </Link>
 
             {/* Mobile Toggle */}
