@@ -289,45 +289,76 @@ export default function HomePage() {
             ============================= */}
         <section className="relative w-full overflow-hidden">
           {/* Purple radial gradient background */}
-          <div className="absolute inset-0 -z-10 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#6633ee_100%)]" />
-
-          <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-28 md:py-36 gap-6">
-            <AnimatedSection>
-              <span className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 rounded-full text-label-sm uppercase tracking-widest text-white/90 font-bold mb-2">
-                <span className="material-symbols-outlined text-[14px] mr-2 text-purple-300">rocket_launch</span>
-                Start Your Journey
-              </span>
-
-              <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-purple-300 leading-tight mt-4 mb-4">
-                The World Is Waiting<br className="hidden md:block" /> For You
-              </h2>
-
-              <p className="text-body-lg text-white/70 max-w-xl mx-auto mb-8">
-                Join thousands of travelers who trust SkyWings to craft extraordinary adventures. Your dream destination is just one click away.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/flights"
-                  className="btn btn-primary btn-lg shadow-[0_0_30px_rgba(102,51,238,0.5)] hover:shadow-[0_0_40px_rgba(102,51,238,0.7)] transition-shadow duration-300"
-                >
-                  <span className="material-symbols-outlined text-[18px]">flight_takeoff</span>
-                  Book a Flight
-                </Link>
-                <Link
-                  href="/flights"
-                  className="btn btn-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
-                >
-                  <span className="material-symbols-outlined text-[18px]">explore</span>
-                  Explore Destinations
-                </Link>
-              </div>
-            </AnimatedSection>
-          </div>
+          <div className="absolute inset-0 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#6633ee_100%)]" />
 
           {/* Decorative glowing orbs */}
-          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 h-64 bg-purple-600/20 rounded-full blur-[80px] pointer-events-none" />
-          <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 bg-violet-500/15 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-1/2 left-[10%] -translate-y-1/2 w-96 h-96 bg-purple-600/25 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-80 h-80 bg-violet-400/20 rounded-full blur-[120px] pointer-events-none" />
+
+          <div className="relative z-10 px-margin-mobile md:px-margin-desktop py-24 md:py-32">
+            <div className="container">
+              <AnimatedSection>
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 md:gap-16">
+
+                  {/* LEFT — Text Content */}
+                  <div className="flex-1">
+                    <span className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 rounded-full text-label-sm uppercase tracking-widest text-white/90 font-bold mb-5">
+                      <span className="material-symbols-outlined text-[14px] mr-2 text-purple-300">rocket_launch</span>
+                      Start Your Journey
+                    </span>
+
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-purple-300 leading-tight mt-4 mb-5">
+                      The World Is<br />Waiting For You
+                    </h2>
+
+                    <p className="text-body-lg text-white/65 max-w-md leading-relaxed">
+                      Join thousands of travelers who trust SkyWings to craft extraordinary adventures. Your dream destination is just one click away.
+                    </p>
+                  </div>
+
+                  {/* RIGHT — CTA Buttons + Stats */}
+                  <div className="flex flex-col gap-6 md:items-end">
+                    {/* Buttons */}
+                    <div className="flex flex-row gap-4 flex-wrap">
+                      <Link
+                        href="/flights"
+                        className="btn btn-primary btn-lg shadow-[0_0_30px_rgba(102,51,238,0.5)] hover:shadow-[0_0_50px_rgba(102,51,238,0.8)] transition-all duration-300 hover:scale-105"
+                      >
+                        <span className="material-symbols-outlined text-[18px]">flight_takeoff</span>
+                        Book a Flight
+                      </Link>
+                      <Link
+                        href="/flights"
+                        className="btn btn-lg bg-white/10 backdrop-blur-sm border border-white/25 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300"
+                      >
+                        <span className="material-symbols-outlined text-[18px]">explore</span>
+                        Explore
+                      </Link>
+                    </div>
+
+                    {/* Trust Stats Row */}
+                    <div className="flex flex-row gap-8 pt-2">
+                      <div className="text-center">
+                        <span className="block text-2xl font-black text-white">50K+</span>
+                        <span className="block text-white/50 text-label-sm uppercase tracking-wider mt-0.5">Travelers</span>
+                      </div>
+                      <div className="w-px bg-white/15 self-stretch" />
+                      <div className="text-center">
+                        <span className="block text-2xl font-black text-white">120+</span>
+                        <span className="block text-white/50 text-label-sm uppercase tracking-wider mt-0.5">Destinations</span>
+                      </div>
+                      <div className="w-px bg-white/15 self-stretch" />
+                      <div className="text-center">
+                        <span className="block text-2xl font-black text-white">4.9★</span>
+                        <span className="block text-white/50 text-label-sm uppercase tracking-wider mt-0.5">Rating</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
         </section>
       </div>
     </>
