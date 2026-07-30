@@ -12,56 +12,89 @@ import ScrollSequence from "@/components/ui/ScrollSequence";
    DATA
    ============================================= */
 
-const popularDestinations = [
+const popularTours = [
   {
-    name: "Santorini",
-    country: "Greece",
-    image: "/images/destinations.png",
-    rating: 4.9,
-    price: "$890",
+    id: "tour-1",
+    name: "Urban Skylines",
+    tagline: "Architecture & culture",
+    image: "/images/tour-city.png",
+    href: "/tours/urban",
   },
   {
-    name: "Bali",
-    country: "Indonesia",
-    image: "/images/destinations.png",
-    rating: 4.8,
-    price: "$650",
+    id: "tour-2",
+    name: "Paris, France",
+    tagline: "Romance & history",
+    image: "/images/tour-paris.png",
+    href: "/tours/paris",
   },
   {
-    name: "Tokyo",
-    country: "Japan",
-    image: "/images/destinations.png",
-    rating: 4.9,
-    price: "$1,200",
+    id: "tour-3",
+    name: "Canyon Depths",
+    tagline: "Adventure & nature",
+    image: "/images/tour-canyon.png",
+    href: "/tours/canyon",
+  },
+  {
+    id: "tour-4",
+    name: "Alpine Peaks",
+    tagline: "Snow & solitude",
+    image: "/images/tour-mountains.png",
+    href: "/tours/alpine",
   },
 ];
 
 const features = [
   {
+    icon: "location_on",
+    title: "Handpicked Destinations",
+    description:
+      "Every route curated for extraordinary discovery. Small details, massive difference.",
+  },
+  {
+    icon: "headset_mic",
+    title: "24/7 Concierge Support",
+    description:
+      "A real travel expert answers your call at any hour. No bots, no waiting.",
+  },
+  {
     icon: "verified",
-    title: "Best Price Guarantee",
+    title: "Verified Best Prices",
     description:
-      "We match competitive prices on flights and hotels to ensure you get the best value for your premium travel experience.",
-  },
-  {
-    icon: "support_agent",
-    title: "24/7 Concierge",
-    description:
-      "Our dedicated travel experts are available around the clock to assist with bookings, changes, and local recommendations.",
-  },
-  {
-    icon: "airline_seat_recline_extra",
-    title: "Exclusive Upgrades",
-    description:
-      "Enjoy priority access to business class upgrades, lounge access, and premium hotel suites for our members.",
+      "We actively compare fares across providers to lock in your ideal deal.",
   },
 ];
+
+const testimonialQuote =
+  '"Attachment to things and comfort is the main obstacle to an interesting life. People, as a rule, do not realize that at any time they can throw anything out of their lives. Anytime. Instantly."';
+
+/* =============================================
+   NUMBER NAV COMPONENT
+   ============================================= */
+
+function NumberNav({ active, count = 5 }: { active: number; count?: number }) {
+  return (
+    <div className="flex flex-col gap-3 items-end">
+      {Array.from({ length: count }, (_, i) => i + 1).map((n) => (
+        <span
+          key={n}
+          className={`number-nav-item text-right select-none ${
+            n === active ? "active" : ""
+          }`}
+        >
+          {String(n).padStart(2, "0")}
+        </span>
+      ))}
+    </div>
+  );
+}
 
 /* =============================================
    COMPONENT
    ============================================= */
 
 export default function HomePage() {
+  const [activeNav] = useState(3);
+
   return (
     <>
       {/* =============================
@@ -69,168 +102,215 @@ export default function HomePage() {
           ============================= */}
       <ScrollSequence frameCount={283} framePrefix="/frames/ezgif-frame-" />
 
-      <div className="relative z-10 bg-background rounded-t-[32px] md:rounded-t-[48px] mt-[-40px] shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+      {/* ─────────────────────────────────────────────────
+          ALL CONTENT — sits above the scroll sequence
+          ───────────────────────────────────────────────── */}
+      <div
+        className="relative z-10 bg-[#0d0d0d] rounded-t-[28px] md:rounded-t-[40px] mt-[-40px] shadow-[0_-12px_48px_rgba(0,0,0,0.7)]"
+      >
         {/* =============================
             HERO SECTION WITH SEARCH
             ============================= */}
-        <section className="relative w-full px-margin-mobile md:px-margin-desktop pt-8 md:pt-12 pb-12">
-          {/* Hero Image Container */}
-          <div className="relative w-full h-[400px] md:h-[500px] rounded-[32px] overflow-hidden shadow-2xl mb-[-100px] z-0">
+        <section className="relative w-full px-4 md:px-10 pt-8 md:pt-10 pb-14">
+          {/* Hero Image */}
+          <div className="relative w-full h-[420px] md:h-[520px] rounded-[20px] overflow-hidden shadow-2xl mb-[-110px] z-0">
             <Image
               src="/images/hero-airplane.png"
-              alt="Airplane window view"
+              alt="Dramatic travel landscape"
               fill
               className="object-cover"
               priority
               quality={90}
             />
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 hero-gradient" />
+            {/* Dark overlay */}
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.48) 0%, rgba(0,0,0,0.18) 60%, rgba(0,0,0,0.55) 100%)" }} />
 
             {/* Hero Text */}
-            <div className="absolute top-8 md:top-14 left-6 md:left-16 z-10 w-[90%] md:w-[600px]">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="inline-flex items-center bg-primary/20 backdrop-blur-sm border border-primary/30 px-4 py-1.5 rounded-full mb-3 whitespace-nowrap badge-pill"
-              >
-                <span className="material-symbols-outlined text-[14px] mr-2 text-white/90">flight_takeoff</span>
-                <span className="text-label-sm uppercase tracking-widest text-white whitespace-nowrap font-bold">
-                  WELCOME TO SKYWINGS
-                </span>
-              </motion.div>
-
+            <div className="absolute top-8 md:top-14 left-6 md:left-14 z-10 w-[80%] md:w-[580px]">
               <motion.h1
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="heading-hero text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/60 drop-shadow-xl leading-tight mb-4"
+                transition={{ duration: 0.65, delay: 0.1 }}
+                className="text-white font-black uppercase leading-none tracking-[-0.01em] mb-4"
+                style={{ fontSize: "clamp(36px, 7vw, 80px)", lineHeight: 1.05 }}
               >
-                Your Adventure Awaits
+                Travel Time
               </motion.h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.35 }}
-                className="text-body-lg text-white/85 drop-shadow-md leading-relaxed w-full max-w-[480px]"
+                transition={{ duration: 0.5, delay: 0.28 }}
+                className="space-y-1 mb-0"
               >
-                Explore flights, hotels, and tours crafted for unforgettable memories.
-              </motion.p>
+                {[
+                  "Don't let the loud noise scare you.",
+                  "Let the rhythms of the dance amuse you.",
+                  "You are given a very rare chance.",
+                  "Feel the movement of our ancestors.",
+                ].map((line, i) => (
+                  <p key={i} className="text-white/70 text-[13px] md:text-[14px] leading-relaxed">
+                    {line}
+                  </p>
+                ))}
+              </motion.div>
             </div>
+
+            {/* Number Nav — right side */}
+            <div className="absolute top-10 right-6 md:right-10 z-10">
+              <NumberNav active={activeNav} count={5} />
+            </div>
+
+            {/* Feature Highlights Bar — bottom of hero */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.45 }}
+              className="absolute bottom-0 left-0 right-0 z-10 px-6 md:px-14 py-5 border-t border-white/10"
+              style={{ background: "rgba(13,13,13,0.55)", backdropFilter: "blur(10px)" }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 md:divide-x md:divide-white/10">
+                {[
+                  { icon: "location_on", title: "Handpicked Destinations", desc: "There will be a small title here.\nA couple of sentences of text." },
+                  { icon: "explore", title: "Guided Adventures", desc: "There will be a small title here.\nA couple of sentences of text." },
+                  { icon: "shield", title: "Trusted Worldwide", desc: "There will be a small title here.\nA couple of sentences of text." },
+                ].map((item, i) => (
+                  <div key={i} className="md:px-8 first:pl-0 last:pr-0 group">
+                    <div className="flex items-start gap-3 mb-3">
+                      <span
+                        className="w-5 h-5 shrink-0 mt-0.5 flex items-center justify-center"
+                        style={{ color: "#e63030" }}
+                      >
+                        <span className="material-symbols-outlined text-[18px] fill">{item.icon}</span>
+                      </span>
+                      <div>
+                        <p className="text-white text-[12px] font-bold leading-snug mb-1">{item.title}</p>
+                        <p className="text-white/50 text-[11px] leading-relaxed whitespace-pre-line">{item.desc}</p>
+                      </div>
+                    </div>
+                    <button className="tour-card-link group-hover:gap-3 transition-all">
+                      More Detailed
+                      <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </div>
 
           {/* Search Widget (Elevated) */}
-          <div className="relative z-10 w-full max-w-5xl mx-auto">
+          <div className="relative z-10 w-full max-w-5xl mx-auto pt-[110px]">
             <SearchWidget />
           </div>
         </section>
 
         {/* =============================
-            POPULAR DESTINATIONS
+            POPULAR TOURS
             ============================= */}
-        <section className="section-spacing">
-          <div className="container">
+        <section className="py-16 md:py-24 px-4 md:px-10">
+          <div className="max-w-[1280px] mx-auto">
             <AnimatedSection>
-              <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-                <div>
-                  <h2 className="heading-section">
-                    Popular Destinations
-                  </h2>
-                  <p className="text-body mt-2">
-                    Discover our most booked locations this week
-                  </p>
-                </div>
-                <button className="hidden md:flex items-center gap-2 text-primary font-label-md text-label-md hover:text-primary-fixed-dim transition-all duration-300 group/viewall">
-                  View all
-                  <span className="material-symbols-outlined text-sm transition-transform duration-300 group-hover/viewall:translate-x-1">arrow_forward</span>
-                </button>
+              <div className="text-center mb-12 md:mb-16">
+                <span className="block mx-auto section-divider" />
+                <h2
+                  className="text-white font-black uppercase tracking-[0.04em] mb-3"
+                  style={{ fontSize: "clamp(22px, 3vw, 32px)" }}
+                >
+                  Popular Tours
+                </h2>
+                <p className="text-white/45 text-[13px] tracking-wide">
+                  There will be a small title here.
+                </p>
               </div>
             </AnimatedSection>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {popularDestinations.map((dest, index) => (
-                <AnimatedSection key={dest.name} delay={index * 0.1}>
-                  <Link href={`/flights?to=${dest.name}`} className="group block">
-                    <div className="group rounded-2xl overflow-hidden cursor-pointer relative aspect-[4/5] shadow-sm hover:shadow-lg transition-all duration-300 border border-outline-variant/20">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+              {popularTours.map((tour, index) => (
+                <AnimatedSection key={tour.id} delay={index * 0.1}>
+                  <Link href={tour.href} className="group block">
+                    <div
+                      className="relative rounded-[10px] overflow-hidden cursor-pointer"
+                      style={{ aspectRatio: "3/4" }}
+                    >
                       <Image
-                        src={dest.image}
-                        alt={dest.name}
+                        src={tour.image}
+                        alt={tour.name}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                       />
-                      {/* Rating Badge */}
-                      <div className="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1 z-10 border border-white/10">
-                        <span className="material-symbols-outlined text-sm text-[#eab308] fill">star</span>
-                        <span className="font-label-sm text-label-sm text-on-surface">{dest.rating}</span>
-                      </div>
-                      {/* Card Bottom Gradient */}
-                      <div className="absolute inset-0 card-gradient flex flex-col justify-end p-6 z-10">
-                        <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                          <span className="text-white/80 font-label-sm text-label-sm uppercase tracking-wider mb-1 block">
-                            {dest.country}
-                          </span>
-                          <h3 className="text-white font-headline-md text-headline-md mb-2">
-                            {dest.name}
-                          </h3>
-                          <div className="flex items-center gap-4 text-white/90 font-body-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span className="flex items-center gap-1">
-                              <span className="material-symbols-outlined text-sm">flight</span> Flights
-                            </span>
-                            <span className="flex items-center gap-1">
-                              <span className="material-symbols-outlined text-sm">hotel</span> Hotels
-                            </span>
-                          </div>
-                          <div className="flex justify-between items-center pt-4 border-t border-white/20">
-                            <span className="text-white/80 font-label-sm">Starting from</span>
-                            <span className="text-white font-headline-md">{dest.price}</span>
-                          </div>
-                        </div>
+                      {/* Gradient overlay */}
+                      <div className="absolute inset-0 card-gradient" />
+
+                      {/* Content at bottom */}
+                      <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+                        <p className="text-white/55 text-[10px] uppercase tracking-[0.14em] font-semibold mb-1">
+                          {tour.tagline}
+                        </p>
+                        <h3
+                          className="text-white font-black uppercase tracking-tight leading-tight mb-2"
+                          style={{ fontSize: "clamp(14px, 2vw, 18px)" }}
+                        >
+                          {tour.name}
+                        </h3>
+                        <p className="text-white/40 text-[11px] leading-snug">
+                          There will be a small.
+                        </p>
                       </div>
                     </div>
                   </Link>
                 </AnimatedSection>
               ))}
             </div>
-
-            <button className="md:hidden w-full mt-6 py-3.5 border border-outline/50 text-on-surface font-label-md text-label-md rounded-xl hover:bg-surface-container hover:border-primary/30 transition-all duration-300 active:scale-[0.98]">
-              View all destinations
-            </button>
           </div>
         </section>
 
         {/* =============================
-            FEATURES SECTION
+            WHY CHOOSE US (Features)
             ============================= */}
-        <section className="bg-surface-container-low section-spacing">
-          <div className="container">
-            <div className="w-full text-center mb-12">
-              <AnimatedSection className="w-full">
-                <h2 className="heading-section mb-4">
-                  Journey To The Skies Made Simple
-                </h2>
-                <div className="w-full flex justify-center">
-                  <p className="text-body" style={{maxWidth: '42rem'}}>
-                    Experience a seamless booking process with premium perks and dedicated support every step of the way.
-                  </p>
-                </div>
-              </AnimatedSection>
-            </div>
+        <section
+          className="py-16 md:py-24 px-4 md:px-10 border-t border-white/5"
+          style={{ background: "#111111" }}
+        >
+          <div className="max-w-[1280px] mx-auto">
+            <AnimatedSection className="mb-14 md:mb-16">
+              <span className="section-divider" />
+              <h2
+                className="text-white font-black uppercase tracking-[0.04em] mb-3"
+                style={{ fontSize: "clamp(22px, 3vw, 32px)" }}
+              >
+                Why Travel With Us
+              </h2>
+              <p className="text-white/40 text-[13px] max-w-md leading-relaxed">
+                We combine local expertise, global reach, and genuine passion to craft experiences that stay with you long after you return home.
+              </p>
+            </AnimatedSection>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {features.map((feature, index) => (
-                <AnimatedSection key={feature.title} delay={index * 0.15}>
-                  <div className="relative bg-surface-container/50 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-outline-variant/20 hover:shadow-xl hover:border-primary/30 hover:-translate-y-3 transition-all duration-500 group overflow-hidden">
-                    {/* Subtle gradient accent on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                    <div className="relative z-10">
-                      <div className="w-14 h-14 bg-gradient-to-br from-primary/15 to-primary/5 text-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 group-hover:text-white transition-all duration-400 group-hover:shadow-[0_4px_16px_rgba(29,78,216,0.3)] group-hover:scale-110">
-                        <span className="material-symbols-outlined text-3xl">{feature.icon}</span>
-                      </div>
-                      <h3 className="heading-card mb-3 group-hover:text-primary transition-colors duration-300">{feature.title}</h3>
-                      <p className="text-body leading-relaxed">{feature.description}</p>
+                <AnimatedSection key={feature.title} delay={index * 0.12}>
+                  <div
+                    className="p-7 rounded-[14px] border border-white/5 hover:border-white/10 transition-all duration-400 group relative overflow-hidden"
+                    style={{ background: "#161616" }}
+                  >
+                    {/* Red top accent line */}
+                    <div
+                      className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                      style={{ background: "#e63030" }}
+                    />
+                    <div
+                      className="w-11 h-11 rounded-[8px] flex items-center justify-center mb-5"
+                      style={{ background: "rgba(230,48,48,0.12)" }}
+                    >
+                      <span className="material-symbols-outlined text-[22px] fill" style={{ color: "#e63030" }}>
+                        {feature.icon}
+                      </span>
                     </div>
+                    <h3 className="text-white font-bold text-[15px] uppercase tracking-wide mb-3">
+                      {feature.title}
+                    </h3>
+                    <p className="text-white/45 text-[13px] leading-relaxed">
+                      {feature.description}
+                    </p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -239,45 +319,80 @@ export default function HomePage() {
         </section>
 
         {/* =============================
-            PROMO BANNER
+            DISCOVER THE WORLD SECTION
             ============================= */}
-        <section className="section-spacing px-margin-mobile md:px-margin-desktop">
-          <div className="container">
+        <section className="relative discover-section min-h-[560px] md:min-h-[680px]">
+          {/* Background aerial image */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/discover-aerial.png"
+              alt="Aerial travel view"
+              fill
+              className="object-cover"
+            />
+            {/* Dark overlay */}
+            <div className="absolute inset-0" style={{ background: "rgba(10,10,10,0.72)" }} />
+          </div>
+
+          <div className="relative z-10 max-w-[1280px] mx-auto px-4 md:px-10 py-16 md:py-24">
             <AnimatedSection>
-              <div className="relative rounded-3xl overflow-hidden bg-surface-container-high border border-outline-variant/20 text-white">
-                <div className="absolute inset-0 z-0">
-                  <Image
-                    src="/images/beach-promo.png"
-                    alt="Tropical beach"
-                    fill
-                    className="object-cover opacity-40 mix-blend-overlay"
-                  />
-                </div>
-                <div className="relative z-10 p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
-                  <div className="w-full md:flex-1" style={{maxWidth: '42rem'}}>
-                    <span className="inline-flex items-center bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-label-sm uppercase tracking-wider mb-4 border border-white/30 whitespace-nowrap badge-pill font-bold">
-                      Limited Time Offer
-                    </span>
-                    <h2 className="heading-section text-white mb-3" style={{width: '100%'}}>
-                      Island Escapes up to 30% Off
-                    </h2>
-                    <p className="text-body-lg text-white/90 mb-6" style={{width: '100%'}}>
-                      Book your tropical getaway before the end of the month and receive complimentary lounge access.
-                    </p>
-                    <Link
-                      href="/flights"
-                      className="btn btn-primary btn-lg"
-                    >
-                      <span className="material-symbols-outlined text-[18px]">local_offer</span>
-                      Claim Offer
-                    </Link>
-                  </div>
-                  <div className="hidden md:flex w-40 h-40 rounded-full bg-white/10 backdrop-blur-md border border-white/20 items-center justify-center shrink-0 shadow-xl">
-                    <div className="text-center">
-                      <span className="block text-[42px] text-white font-black leading-none drop-shadow-md">-30%</span>
-                      <span className="block text-[12px] text-white/90 uppercase tracking-[0.2em] mt-1 font-bold">Discount</span>
+              <div className="flex flex-col md:flex-row md:items-end gap-10 md:gap-16">
+                {/* Left — Big headline */}
+                <div className="flex-1">
+                  <h2
+                    className="text-white font-black uppercase leading-none tracking-[-0.01em] mb-8"
+                    style={{ fontSize: "clamp(36px, 6vw, 72px)", lineHeight: 1.05 }}
+                  >
+                    Discover the
+                    <br />
+                    World in a
+                    <br />
+                    New Way
+                  </h2>
+
+                  <button className="play-btn mb-10 group">
+                    <div className="play-btn-circle">
+                      <span className="material-symbols-outlined text-white text-[20px] fill ml-[2px]">
+                        play_arrow
+                      </span>
                     </div>
+                    Watch the Video
+                  </button>
+
+                  {/* Quote */}
+                  <div className="max-w-[400px]">
+                    <p className="text-white/55 text-[13px] leading-[1.8] italic mb-4">
+                      {testimonialQuote}
+                    </p>
+                    <p className="text-white/35 text-[11px] uppercase tracking-[0.14em] font-bold">
+                      © Carlos Castaneda
+                    </p>
                   </div>
+                </div>
+
+                {/* Right — Video thumbnails */}
+                <div className="flex flex-row md:flex-col gap-4 md:w-[340px] shrink-0">
+                  {[
+                    { src: "/images/video-thumb-1.png", label: "Tropical Escapes" },
+                    { src: "/images/video-thumb-2.png", label: "Historic Cities" },
+                  ].map((thumb, i) => (
+                    <div key={i} className="video-thumb flex-1 md:flex-none group cursor-pointer">
+                      <Image
+                        src={thumb.src}
+                        alt={thumb.label}
+                        fill
+                        className="object-cover"
+                      />
+                      {/* Play icon overlay */}
+                      <div className="absolute inset-0 z-10 flex items-center justify-center">
+                        <div
+                          className="w-10 h-10 rounded-full flex items-center justify-center border border-white/60 group-hover:border-[#e63030] group-hover:bg-[rgba(230,48,48,0.2)] transition-all duration-300"
+                        >
+                          <span className="material-symbols-outlined text-white text-[16px] fill ml-[1px]">play_arrow</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </AnimatedSection>
@@ -285,79 +400,86 @@ export default function HomePage() {
         </section>
 
         {/* =============================
-            PURPLE GRADIENT CTA SECTION
+            STATS BAR
             ============================= */}
-        <section className="relative w-full overflow-hidden">
-          {/* Purple radial gradient background */}
-          <div className="absolute inset-0 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#6633ee_100%)]" />
-
-          {/* Decorative glowing orbs */}
-          <div className="absolute top-1/2 left-[10%] -translate-y-1/2 w-96 h-96 bg-purple-600/25 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-80 h-80 bg-violet-400/20 rounded-full blur-[120px] pointer-events-none" />
-
-          <div className="relative z-10 px-margin-mobile md:px-margin-desktop py-24 md:py-32">
-            <div className="container">
-              <AnimatedSection>
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10 md:gap-16">
-
-                  {/* LEFT — Text Content */}
-                  <div className="flex-1">
-                    <span className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 rounded-full text-label-sm uppercase tracking-widest text-white/90 font-bold mb-5">
-                      <span className="material-symbols-outlined text-[14px] mr-2 text-purple-300">rocket_launch</span>
-                      Start Your Journey
+        <section
+          className="py-10 md:py-14 px-4 md:px-10 border-t border-b border-white/5"
+          style={{ background: "#0d0d0d" }}
+        >
+          <div className="max-w-[1280px] mx-auto">
+            <AnimatedSection>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:divide-x md:divide-white/8">
+                {[
+                  { value: "50K+", label: "Happy Travelers" },
+                  { value: "120+", label: "Destinations" },
+                  { value: "14+", label: "Years of Experience" },
+                  { value: "4.9★", label: "Average Rating" },
+                ].map((stat, i) => (
+                  <div key={i} className="flex flex-col gap-1 px-4">
+                    <span
+                      className="font-black text-white"
+                      style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
+                    >
+                      {stat.value}
                     </span>
-
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-purple-300 leading-tight mt-4 mb-5">
-                      The World Is<br />Waiting For You
-                    </h2>
-
-                    <p className="text-body-lg text-white/65 max-w-md leading-relaxed">
-                      Join thousands of travelers who trust SkyWings to craft extraordinary adventures. Your dream destination is just one click away.
-                    </p>
+                    <span className="text-white/35 text-[11px] uppercase tracking-[0.14em] font-semibold">
+                      {stat.label}
+                    </span>
                   </div>
+                ))}
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
 
-                  {/* RIGHT — CTA Buttons + Stats */}
-                  <div className="flex flex-col gap-6 md:items-end">
-                    {/* Buttons */}
-                    <div className="flex flex-row gap-4 flex-wrap">
-                      <Link
-                        href="/flights"
-                        className="btn btn-primary btn-lg shadow-[0_0_30px_rgba(102,51,238,0.5)] hover:shadow-[0_0_50px_rgba(102,51,238,0.8)] transition-all duration-300 hover:scale-105"
-                      >
-                        <span className="material-symbols-outlined text-[18px]">flight_takeoff</span>
-                        Book a Flight
-                      </Link>
-                      <Link
-                        href="/flights"
-                        className="btn btn-lg bg-white/10 backdrop-blur-sm border border-white/25 text-white hover:bg-white/20 hover:border-white/40 transition-all duration-300"
-                      >
-                        <span className="material-symbols-outlined text-[18px]">explore</span>
-                        Explore
-                      </Link>
-                    </div>
+        {/* =============================
+            CTA — BOOK A TRIP
+            ============================= */}
+        <section className="py-16 md:py-24 px-4 md:px-10" style={{ background: "#111111" }}>
+          <div className="max-w-[1280px] mx-auto">
+            <AnimatedSection>
+              <div
+                className="relative rounded-[20px] overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 p-10 md:p-14 border border-white/6"
+                style={{ background: "#161616" }}
+              >
+                {/* Decorative red glow */}
+                <div
+                  className="absolute top-[-80px] right-[-80px] w-[280px] h-[280px] rounded-full blur-[100px] pointer-events-none opacity-30"
+                  style={{ background: "#e63030" }}
+                />
 
-                    {/* Trust Stats Row */}
-                    <div className="flex flex-row gap-8 pt-2">
-                      <div className="text-center">
-                        <span className="block text-2xl font-black text-white">50K+</span>
-                        <span className="block text-white/50 text-label-sm uppercase tracking-wider mt-0.5">Travelers</span>
-                      </div>
-                      <div className="w-px bg-white/15 self-stretch" />
-                      <div className="text-center">
-                        <span className="block text-2xl font-black text-white">120+</span>
-                        <span className="block text-white/50 text-label-sm uppercase tracking-wider mt-0.5">Destinations</span>
-                      </div>
-                      <div className="w-px bg-white/15 self-stretch" />
-                      <div className="text-center">
-                        <span className="block text-2xl font-black text-white">4.9★</span>
-                        <span className="block text-white/50 text-label-sm uppercase tracking-wider mt-0.5">Rating</span>
-                      </div>
-                    </div>
-                  </div>
-
+                <div className="relative z-10 flex-1">
+                  <span className="section-divider" />
+                  <h2
+                    className="text-white font-black uppercase tracking-[-0.01em] mb-4"
+                    style={{ fontSize: "clamp(26px, 4vw, 48px)", lineHeight: 1.1 }}
+                  >
+                    The World Is<br />
+                    Waiting for You
+                  </h2>
+                  <p className="text-white/40 text-[14px] leading-relaxed max-w-[400px]">
+                    Join thousands of travelers who trust us to craft extraordinary adventures. Your dream destination is just one click away.
+                  </p>
                 </div>
-              </AnimatedSection>
-            </div>
+
+                <div className="relative z-10 flex flex-col gap-4 md:items-end shrink-0">
+                  <Link
+                    href="/flights"
+                    className="btn btn-primary"
+                  >
+                    <span className="material-symbols-outlined text-[17px]">flight_takeoff</span>
+                    Book a Flight
+                  </Link>
+                  <Link
+                    href="/tours"
+                    className="btn btn-secondary"
+                  >
+                    <span className="material-symbols-outlined text-[17px]">explore</span>
+                    Explore Tours
+                  </Link>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </section>
       </div>

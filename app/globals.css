@@ -16,54 +16,71 @@
   --font-label-md: var(--font-geist), monospace;
   --font-label-sm: var(--font-geist), monospace;
 
-  /* Brand Colors from DESIGN.md */
-  --color-surface: #0b1326;
-  --color-surface-dim: #0b1326;
-  --color-surface-bright: #31394d;
-  --color-surface-container-lowest: #060e20;
-  --color-surface-container-low: #131b2e;
-  --color-surface-container: #171f33;
-  --color-surface-container-high: #222a3d;
-  --color-surface-container-highest: #2d3449;
-  --color-on-surface: #dae2fd;
-  --color-on-surface-variant: #c4c5d7;
-  --color-inverse-surface: #dae2fd;
-  --color-inverse-on-surface: #283044;
-  --color-outline: #8e90a0;
-  --color-outline-variant: #434655;
-  --color-surface-tint: #b7c4ff;
-  --color-primary: #b7c4ff;
-  --color-on-primary: #002682;
-  --color-primary-container: #1d4ed8;
-  --color-on-primary-container: #cad3ff;
-  --color-inverse-primary: #2151da;
-  --color-secondary: #7bd0ff;
-  --color-on-secondary: #00354a;
-  --color-secondary-container: #00a6e0;
-  --color-on-secondary-container: #00374d;
-  --color-tertiary: #ffb59c;
-  --color-on-tertiary: #5c1900;
-  --color-tertiary-container: #a73400;
-  --color-on-tertiary-container: #ffc9b7;
-  --color-error: #ffb4ab;
-  --color-on-error: #690005;
-  --color-error-container: #93000a;
+  /* ── WERLTON / Editorial Travel Palette ── */
+  /* Near-black backgrounds */
+  --color-surface: #0d0d0d;
+  --color-surface-dim: #080808;
+  --color-surface-bright: #1c1c1c;
+  --color-surface-container-lowest: #050505;
+  --color-surface-container-low: #111111;
+  --color-surface-container: #161616;
+  --color-surface-container-high: #1f1f1f;
+  --color-surface-container-highest: #2a2a2a;
+
+  /* Text */
+  --color-on-surface: #f0f0f0;
+  --color-on-surface-variant: #a0a0a0;
+  --color-inverse-surface: #f0f0f0;
+  --color-inverse-on-surface: #1a1a1a;
+
+  /* Borders */
+  --color-outline: #505050;
+  --color-outline-variant: #2d2d2d;
+  --color-surface-tint: #e63030;
+
+  /* Primary — Red accent */
+  --color-primary: #e63030;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #c02020;
+  --color-on-primary-container: #ffe0e0;
+  --color-inverse-primary: #e63030;
+
+  /* Secondary — muted warm grey */
+  --color-secondary: #888888;
+  --color-on-secondary: #000000;
+  --color-secondary-container: #333333;
+  --color-on-secondary-container: #dddddd;
+
+  /* Tertiary — off-white cream */
+  --color-tertiary: #e8e0d4;
+  --color-on-tertiary: #1a1a1a;
+  --color-tertiary-container: #3a3530;
+  --color-on-tertiary-container: #f5f0eb;
+
+  /* Errors */
+  --color-error: #ff6b6b;
+  --color-on-error: #1a0000;
+  --color-error-container: #7a0000;
   --color-on-error-container: #ffdad6;
-  --color-primary-fixed: #dce1ff;
-  --color-primary-fixed-dim: #b7c4ff;
-  --color-on-primary-fixed: #001551;
-  --color-on-primary-fixed-variant: #0039b5;
-  --color-secondary-fixed: #c4e7ff;
-  --color-secondary-fixed-dim: #7bd0ff;
-  --color-on-secondary-fixed: #001e2c;
-  --color-on-secondary-fixed-variant: #004c69;
-  --color-tertiary-fixed: #ffdbcf;
-  --color-tertiary-fixed-dim: #ffb59c;
-  --color-on-tertiary-fixed: #390c00;
-  --color-on-tertiary-fixed-variant: #832700;
-  --color-background: #0b1326;
-  --color-on-background: #dae2fd;
-  --color-surface-variant: #2d3449;
+
+  /* Fixed variants */
+  --color-primary-fixed: #ff8080;
+  --color-primary-fixed-dim: #e63030;
+  --color-on-primary-fixed: #1a0000;
+  --color-on-primary-fixed-variant: #8b0000;
+  --color-secondary-fixed: #cccccc;
+  --color-secondary-fixed-dim: #888888;
+  --color-on-secondary-fixed: #0a0a0a;
+  --color-on-secondary-fixed-variant: #333333;
+  --color-tertiary-fixed: #f5f0eb;
+  --color-tertiary-fixed-dim: #e8e0d4;
+  --color-on-tertiary-fixed: #1a1a1a;
+  --color-on-tertiary-fixed-variant: #3a3530;
+
+  /* Background */
+  --color-background: #0d0d0d;
+  --color-on-background: #f0f0f0;
+  --color-surface-variant: #1f1f1f;
 
   /* Custom Spacing Variables */
   --spacing-xs: 4px;
@@ -86,9 +103,9 @@
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-ambient: 0 4px 20px rgba(0, 0, 0, 0.2);
-  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.15);
-  --shadow-card-hover: 0 12px 35px rgba(0, 0, 0, 0.3);
+  --shadow-ambient: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 12px 35px rgba(0, 0, 0, 0.6);
 
   /* Transitions */
   --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -366,23 +383,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 50%, #2563eb 100%);
+  background: #e63030;
   color: white;
   padding: 14px 36px;
   font-size: 14px;
-  letter-spacing: 0.03em;
-  box-shadow: 0 4px 15px rgba(29, 78, 216, 0.4), 0 1px 3px rgba(0,0,0,0.2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(230, 48, 48, 0.35), 0 1px 3px rgba(0,0,0,0.3);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #60a5fa 50%, #3b82f6 100%);
+  background: #cc2020;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(29, 78, 216, 0.5), 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px rgba(230, 48, 48, 0.5), 0 2px 6px rgba(0,0,0,0.4);
 }
 
 .btn-primary:active {
   transform: translateY(0) scale(0.98);
-  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.4);
+  box-shadow: 0 2px 8px rgba(230, 48, 48, 0.4);
 }
 
 .btn-secondary {
@@ -549,22 +567,131 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-gradient {
-  background: linear-gradient(to bottom, rgba(11, 19, 38, 0.4), rgba(11, 19, 38, 0.1));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.15));
 }
 
 .card-gradient {
-  background: linear-gradient(to top, rgba(11, 19, 38, 0.9) 0%, rgba(11, 19, 38, 0) 50%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
 }
 
 .btn-primary-gradient {
-  background: linear-gradient(90deg, #1d4ed8 0%, #2151da 100%);
+  background: #e63030;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #ff8080 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* ── Editorial Section Divider ── */
+.section-divider {
+  width: 48px;
+  height: 3px;
+  background: var(--color-primary);
+  display: block;
+  margin-bottom: 16px;
+}
+
+/* ── Tour Card Hover Underline ── */
+.tour-card-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  transition: gap 0.3s ease;
+}
+.tour-card-link:hover {
+  gap: 12px;
+}
+
+/* ── Number Nav ── */
+.number-nav-item {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.35);
+  transition: color 0.3s;
+  cursor: pointer;
+}
+.number-nav-item.active {
+  color: #ffffff;
+  font-weight: 700;
+}
+.number-nav-item:hover {
+  color: rgba(255,255,255,0.8);
+}
+
+/* ── Feature Highlight Bar ── */
+.feature-highlight {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.feature-highlight:first-child {
+  border-top: none;
+}
+
+/* ── Discover Section ── */
+.discover-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Video Thumbnail ── */
+.video-thumb {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  cursor: pointer;
+}
+.video-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+.video-thumb:hover::after {
+  background: rgba(0,0,0,0.05);
+}
+
+/* ── Play Button ── */
+.play-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.85);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.play-btn:hover {
+  color: #ffffff;
+}
+.play-btn-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 9999px;
+  border: 2px solid rgba(255,255,255,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.play-btn:hover .play-btn-circle {
+  border-color: #e63030;
+  background: rgba(230,48,48,0.15);
+  box-shadow: 0 0 20px rgba(230,48,48,0.3);
 }
 
 .line-clamp-2 {

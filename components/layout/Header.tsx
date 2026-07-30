@@ -6,9 +6,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { href: "/flights", label: "Flights" },
-  { href: "/hotels", label: "Hotels" },
-  { href: "/packages", label: "Packages" },
+  { href: "/", label: "Main" },
+  { href: "/about", label: "About Us" },
+  { href: "/tours", label: "Tours" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/reviews", label: "Reviews" },
+  { href: "/contact", label: "Contacts" },
 ];
 
 export default function Header() {
@@ -18,7 +21,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 40);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -38,64 +41,67 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed left-0 right-0 z-50 transition-all duration-500 ease-in-out flex justify-center ${
-          isScrolled ? "top-4 px-4" : "top-0 px-0"
-        }`}
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 ease-in-out`}
+        style={
+          isScrolled
+            ? {
+                background: "rgba(13, 13, 13, 0.92)",
+                backdropFilter: "blur(20px) saturate(180%)",
+                WebkitBackdropFilter: "blur(20px) saturate(180%)",
+                borderBottom: "1px solid rgba(255,255,255,0.06)",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
+              }
+            : {
+                background: "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 100%)",
+              }
+        }
       >
-        <div
-          className={`w-full max-w-7xl mx-auto flex items-center justify-between transition-all duration-500 ${
-            isScrolled
-              ? "h-16 px-6 md:px-8 rounded-full border shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)]"
-              : "h-20 px-6 md:px-12"
-          }`}
-          style={
-            isScrolled
-              ? {
-                  background: "rgba(11, 19, 38, 0.75)",
-                  backdropFilter: "blur(24px) saturate(200%)",
-                  WebkitBackdropFilter: "blur(24px) saturate(200%)",
-                  borderColor: "rgba(255, 255, 255, 0.1)",
-                }
-              : {
-                  background: "linear-gradient(to bottom, rgba(11,19,38,0.8) 0%, rgba(11,19,38,0) 100%)",
-                  borderColor: "transparent",
-                }
-          }
-        >
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 h-[64px] flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3 group shrink-0"
+            className="flex items-center gap-2 group shrink-0"
             aria-label="SkyWings Home"
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary flex items-center justify-center shadow-lg group-hover:shadow-primary/30 transition-all duration-300 group-hover:scale-105">
-              <span className="material-symbols-outlined fill text-on-primary text-[24px]">
+            {/* Red square logo mark */}
+            <div
+              className="w-7 h-7 flex items-center justify-center"
+              style={{ background: "#e63030" }}
+            >
+              <span className="material-symbols-outlined fill text-white text-[16px]">
                 flight
               </span>
             </div>
-            <span className="text-[20px] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70 uppercase tracking-widest leading-none">
-              SkyWings
+            <span
+              className="text-[13px] font-black uppercase tracking-[0.2em] text-white leading-none"
+            >
+              Werlton
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-2 h-full" aria-label="Main navigation">
+          <nav
+            className="hidden md:flex items-center gap-7 h-full"
+            aria-label="Main navigation"
+          >
             {navLinks.map((link) => {
-              const isActive =
-                pathname === link.href || (pathname === "/" && link.href === "/flights");
+              const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="relative px-4 py-2 rounded-full text-[14px] font-semibold tracking-wide transition-colors duration-300"
+                  className={`relative text-[11px] font-bold tracking-[0.12em] uppercase transition-colors duration-300 py-1 ${
+                    isActive
+                      ? "text-white"
+                      : "text-white/55 hover:text-white"
+                  }`}
                 >
-                  <span className={`relative z-10 ${isActive ? "text-white" : "text-white/70 hover:text-white"}`}>
-                    {link.label}
-                  </span>
+                  {link.label}
                   {isActive && (
                     <motion.div
-                      layoutId="navIndicatorDesktop"
-                      className="absolute inset-0 bg-white/10 rounded-full border border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]"
+                      layoutId="navUnderline"
+                      className="absolute -bottom-0.5 left-0 right-0 h-[2px]"
+                      style={{ background: "#e63030" }}
                       transition={{ type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
@@ -106,40 +112,23 @@ export default function Header() {
 
           {/* Right Actions */}
           <div className="flex items-center gap-3 shrink-0">
-            {/* Search */}
+            {/* Search icon */}
             <button
-              className="hidden sm:flex w-10 h-10 items-center justify-center text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300"
+              className="w-9 h-9 flex items-center justify-center text-white/50 hover:text-white transition-colors duration-300"
               aria-label="Search"
             >
-              <span className="material-symbols-outlined text-[20px]">search</span>
+              <span className="material-symbols-outlined text-[18px]">search</span>
             </button>
-
-            {/* Currency */}
-            <button
-              className="hidden lg:flex items-center gap-1.5 px-3 py-2 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-all duration-300"
-              aria-label="Select currency"
-            >
-              <span className="material-symbols-outlined text-[18px]">language</span>
-              <span className="text-[13px] font-semibold leading-none pt-[2px]">USD</span>
-            </button>
-
-            {/* CTA */}
-            <Link
-              href="/account"
-              className="hidden md:inline-flex items-center justify-center gap-2 bg-gradient-to-r from-white via-white to-white/90 text-surface text-[14px] font-bold tracking-wide px-6 py-2.5 rounded-full hover:from-primary-fixed hover:to-primary-fixed-dim hover:text-on-primary-fixed transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(183,196,255,0.3)] transform hover:-translate-y-0.5 leading-none group/signin"
-            >
-              <span className="pt-[1px]">Sign In</span>
-              <span className="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover/signin:translate-x-0.5">arrow_forward</span>
-            </Link>
 
             {/* Mobile Toggle */}
             <button
+              id="mobile-menu-toggle"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden w-10 h-10 flex items-center justify-center text-white hover:bg-white/10 rounded-full transition-all duration-300"
+              className="md:hidden w-9 h-9 flex items-center justify-center text-white hover:text-white/70 transition-all duration-300"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
-              <span className="material-symbols-outlined text-[24px]">
-                {isMobileMenuOpen ? "close" : "menu_open"}
+              <span className="material-symbols-outlined text-[22px]">
+                {isMobileMenuOpen ? "close" : "menu"}
               </span>
             </button>
           </div>
@@ -150,37 +139,43 @@ export default function Header() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            animate={{ opacity: 1, backdropFilter: "blur(24px)" }}
-            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-            transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-40 md:hidden bg-surface/90"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+            className="fixed inset-0 z-40 md:hidden"
+            style={{ background: "#0d0d0d" }}
           >
-            <div className="pt-28 pb-8 px-6 h-full overflow-y-auto flex flex-col">
-              <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
+            <div className="pt-24 pb-10 px-8 h-full flex flex-col">
+              <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
                 {navLinks.map((link, index) => {
-                  const isActive =
-                    pathname === link.href || (pathname === "/" && link.href === "/flights");
+                  const isActive = pathname === link.href;
                   return (
                     <motion.div
                       key={link.href}
-                      initial={{ opacity: 0, x: -20 }}
+                      initial={{ opacity: 0, x: 30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{
-                        delay: index * 0.1,
-                        duration: 0.4,
+                        delay: index * 0.07,
+                        duration: 0.35,
                         ease: [0.25, 0.1, 0.25, 1],
                       }}
                     >
                       <Link
                         href={link.href}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`flex items-center px-6 py-4 text-[22px] font-bold rounded-2xl transition-all duration-300 ${
+                        className={`flex items-center py-4 text-[28px] font-black uppercase tracking-wider transition-all duration-300 border-b ${
                           isActive
-                            ? "bg-gradient-to-r from-primary/20 to-transparent text-primary border-l-4 border-primary"
-                            : "text-white/70 hover:text-white hover:bg-white/5 border-l-4 border-transparent"
+                            ? "text-white border-white/10"
+                            : "text-white/35 hover:text-white border-white/5"
                         }`}
                       >
+                        {isActive && (
+                          <span
+                            className="w-2 h-2 rounded-full mr-4 shrink-0"
+                            style={{ background: "#e63030" }}
+                          />
+                        )}
                         {link.label}
                       </Link>
                     </motion.div>
@@ -188,19 +183,18 @@ export default function Header() {
                 })}
               </nav>
 
-              <div className="mt-auto pt-8 flex flex-col gap-4">
+              <div className="mt-auto pt-8 flex flex-col gap-3">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.4 }}
+                  transition={{ delay: 0.45, duration: 0.35 }}
                 >
                   <Link
-                    href="/account"
+                    href="/flights"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="w-full flex items-center justify-center gap-2 bg-white text-surface text-[16px] font-bold px-6 py-4 rounded-full hover:bg-primary-fixed transition-all"
+                    className="btn btn-primary w-full justify-center"
                   >
-                    Sign In
-                    <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
+                    Book a Flight
                   </Link>
                 </motion.div>
               </div>
