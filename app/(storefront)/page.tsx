@@ -283,6 +283,52 @@ export default function HomePage() {
             </AnimatedSection>
           </div>
         </section>
+
+        {/* =============================
+            PURPLE GRADIENT CTA SECTION
+            ============================= */}
+        <section className="relative w-full overflow-hidden">
+          {/* Purple radial gradient background */}
+          <div className="absolute inset-0 -z-10 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#6633ee_100%)]" />
+
+          <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-28 md:py-36 gap-6">
+            <AnimatedSection>
+              <span className="inline-flex items-center bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 rounded-full text-label-sm uppercase tracking-widest text-white/90 font-bold mb-2">
+                <span className="material-symbols-outlined text-[14px] mr-2 text-purple-300">rocket_launch</span>
+                Start Your Journey
+              </span>
+
+              <h2 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-purple-300 leading-tight mt-4 mb-4">
+                The World Is Waiting<br className="hidden md:block" /> For You
+              </h2>
+
+              <p className="text-body-lg text-white/70 max-w-xl mx-auto mb-8">
+                Join thousands of travelers who trust SkyWings to craft extraordinary adventures. Your dream destination is just one click away.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/flights"
+                  className="btn btn-primary btn-lg shadow-[0_0_30px_rgba(102,51,238,0.5)] hover:shadow-[0_0_40px_rgba(102,51,238,0.7)] transition-shadow duration-300"
+                >
+                  <span className="material-symbols-outlined text-[18px]">flight_takeoff</span>
+                  Book a Flight
+                </Link>
+                <Link
+                  href="/flights"
+                  className="btn btn-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
+                >
+                  <span className="material-symbols-outlined text-[18px]">explore</span>
+                  Explore Destinations
+                </Link>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          {/* Decorative glowing orbs */}
+          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-64 h-64 bg-purple-600/20 rounded-full blur-[80px] pointer-events-none" />
+          <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-64 h-64 bg-violet-500/15 rounded-full blur-[100px] pointer-events-none" />
+        </section>
       </div>
     </>
   );
