@@ -694,6 +694,31 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 20px rgba(230,48,48,0.3);
 }
 
+/* ===================================
+   FEATURE CARD — Modern Style
+   =================================== */
+
+.feature-card-modern {
+  position: relative;
+  padding: 32px 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #161616;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.feature-card-modern:hover {
+  border-color: rgba(230, 48, 48, 0.2);
+  background: #1a1a1a;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(230, 48, 48, 0.1);
+}
+
+/* ===================================
+   LINE CLAMP UTILITIES
+   =================================== */
+
 .line-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;

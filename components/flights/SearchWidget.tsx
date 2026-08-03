@@ -32,8 +32,8 @@ export default function SearchWidget() {
   return (
     <div className="w-full max-w-5xl mx-auto">
       <div
-        className="rounded-[16px] shadow-2xl border border-white/6 overflow-hidden"
-        style={{ background: "rgba(13,13,13,0.92)", backdropFilter: "blur(20px)" }}
+        className="rounded-[20px] shadow-[0_8px_40px_rgba(0,0,0,0.4)] border border-white/6 overflow-hidden"
+        style={{ background: "rgba(13,13,13,0.95)", backdropFilter: "blur(24px) saturate(180%)" }}
       >
         {/* Tabs */}
         <div className="flex border-b border-white/6" style={{ background: "rgba(10,10,10,0.6)" }}>
@@ -67,8 +67,8 @@ export default function SearchWidget() {
         </div>
 
         {/* Search Form */}
-        <form onSubmit={handleSearch} className="p-5 md:p-6" style={{ background: "rgba(16,16,16,0.7)" }}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-center">
+        <form onSubmit={handleSearch} className="p-5 md:p-7" style={{ background: "rgba(16,16,16,0.7)" }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4 items-center">
             
             {/* From & To Wrapper (Spans 2 columns on lg) */}
             <div className="lg:col-span-2 flex flex-col md:flex-row items-center gap-2 relative w-full">
@@ -144,8 +144,8 @@ export default function SearchWidget() {
             {/* Submit */}
             <button
               type="submit"
-              className="lg:col-span-1 w-full h-[64px] px-6 text-white rounded-[10px] font-black text-[11px] tracking-[0.14em] uppercase flex items-center justify-center gap-2.5 transition-all duration-300 shadow-[0_4px_20px_rgba(230,48,48,0.35)] hover:shadow-[0_8px_30px_rgba(230,48,48,0.5)] hover:opacity-90 shrink-0 cursor-pointer active:scale-95 group/search"
-              style={{ background: "#e63030" }}
+              className="lg:col-span-1 w-full h-[64px] px-6 text-white rounded-[12px] font-black text-[11px] tracking-[0.14em] uppercase flex items-center justify-center gap-2.5 transition-all duration-300 shadow-[0_4px_20px_rgba(230,48,48,0.35)] hover:shadow-[0_8px_30px_rgba(230,48,48,0.5)] hover:brightness-110 shrink-0 cursor-pointer active:scale-[0.97] group/search"
+              style={{ background: "linear-gradient(135deg, #e63030 0%, #cc2020 100%)" }}
             >
               <span className="material-symbols-outlined text-[18px] transition-transform duration-300 group-hover/search:rotate-12">search</span>
               <span>Search</span>

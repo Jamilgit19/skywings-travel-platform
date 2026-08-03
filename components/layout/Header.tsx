@@ -41,7 +41,9 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed left-0 right-0 z-50 transition-all duration-500 ease-in-out`}
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+          isScrolled ? "top-0" : "top-0"
+        }`}
         style={
           isScrolled
             ? {
@@ -56,16 +58,20 @@ export default function Header() {
               }
         }
       >
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12 h-[64px] flex items-center justify-between">
+        <div
+          className={`max-w-[1440px] mx-auto px-6 md:px-12 flex items-center justify-between transition-all duration-500 ${
+            isScrolled ? "h-[56px]" : "h-[68px]"
+          }`}
+        >
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 group shrink-0"
+            className="flex items-center gap-2.5 group shrink-0"
             aria-label="SkyWings Home"
           >
             {/* Red square logo mark */}
             <div
-              className="w-7 h-7 flex items-center justify-center"
+              className="w-7 h-7 rounded-[3px] flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
               style={{ background: "#e63030" }}
             >
               <span className="material-symbols-outlined fill text-white text-[16px]">
@@ -111,13 +117,21 @@ export default function Header() {
           </nav>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2 shrink-0">
             {/* Search icon */}
             <button
-              className="w-9 h-9 flex items-center justify-center text-white/50 hover:text-white transition-colors duration-300"
+              className="w-9 h-9 flex items-center justify-center text-white/40 hover:text-white rounded-full hover:bg-white/5 transition-all duration-300"
               aria-label="Search"
             >
               <span className="material-symbols-outlined text-[18px]">search</span>
+            </button>
+
+            {/* Account icon (desktop) */}
+            <button
+              className="hidden md:flex w-9 h-9 items-center justify-center text-white/40 hover:text-white rounded-full hover:bg-white/5 transition-all duration-300"
+              aria-label="Account"
+            >
+              <span className="material-symbols-outlined text-[18px]">person</span>
             </button>
 
             {/* Mobile Toggle */}
@@ -196,6 +210,16 @@ export default function Header() {
                   >
                     Book a Flight
                   </Link>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.55, duration: 0.35 }}
+                  className="text-center"
+                >
+                  <p className="text-white/25 text-[11px] uppercase tracking-[0.12em] mt-4">
+                    24/7 Support: +1 (800) 555-0199
+                  </p>
                 </motion.div>
               </div>
             </div>

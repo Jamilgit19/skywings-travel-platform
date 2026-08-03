@@ -17,6 +17,7 @@ const popularTours = [
     id: "tour-1",
     name: "Urban Skylines",
     tagline: "Architecture & culture",
+    description: "Explore iconic cityscapes and modern marvels.",
     image: "/images/tour-city.png",
     href: "/tours/urban",
   },
@@ -24,6 +25,7 @@ const popularTours = [
     id: "tour-2",
     name: "Paris, France",
     tagline: "Romance & history",
+    description: "Discover the City of Light and its timeless charm.",
     image: "/images/tour-paris.png",
     href: "/tours/paris",
   },
@@ -31,6 +33,7 @@ const popularTours = [
     id: "tour-3",
     name: "Canyon Depths",
     tagline: "Adventure & nature",
+    description: "Journey through ancient geological wonders.",
     image: "/images/tour-canyon.png",
     href: "/tours/canyon",
   },
@@ -38,6 +41,7 @@ const popularTours = [
     id: "tour-4",
     name: "Alpine Peaks",
     tagline: "Snow & solitude",
+    description: "Breathtaking mountain vistas and fresh alpine air.",
     image: "/images/tour-mountains.png",
     href: "/tours/alpine",
   },
@@ -171,9 +175,9 @@ export default function HomePage() {
             >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 md:divide-x md:divide-white/10">
                 {[
-                  { icon: "location_on", title: "Handpicked Destinations", desc: "There will be a small title here.\nA couple of sentences of text." },
-                  { icon: "explore", title: "Guided Adventures", desc: "There will be a small title here.\nA couple of sentences of text." },
-                  { icon: "shield", title: "Trusted Worldwide", desc: "There will be a small title here.\nA couple of sentences of text." },
+                  { icon: "location_on", title: "Handpicked Destinations", desc: "Routes curated by expert travel designers for extraordinary discovery." },
+                  { icon: "explore", title: "Guided Adventures", desc: "Personalized itineraries with local guides and seamless logistics." },
+                  { icon: "shield", title: "Trusted Worldwide", desc: "14+ years of reliable service with thousands of happy travellers." },
                 ].map((item, i) => (
                   <div key={i} className="md:px-8 first:pl-0 last:pr-0 group">
                     <div className="flex items-start gap-3 mb-3">
@@ -185,7 +189,7 @@ export default function HomePage() {
                       </span>
                       <div>
                         <p className="text-white text-[12px] font-bold leading-snug mb-1">{item.title}</p>
-                        <p className="text-white/50 text-[11px] leading-relaxed whitespace-pre-line">{item.desc}</p>
+                        <p className="text-white/50 text-[11px] leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                     <button className="tour-card-link group-hover:gap-3 transition-all">
@@ -218,18 +222,18 @@ export default function HomePage() {
                 >
                   Popular Tours
                 </h2>
-                <p className="text-white/45 text-[13px] tracking-wide">
-                  There will be a small title here.
+                <p className="text-white/45 text-[13px] tracking-wide max-w-md mx-auto">
+                  Explore our most sought-after travel experiences, handpicked by our team.
                 </p>
               </div>
             </AnimatedSection>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
               {popularTours.map((tour, index) => (
                 <AnimatedSection key={tour.id} delay={index * 0.1}>
                   <Link href={tour.href} className="group block">
                     <div
-                      className="relative rounded-[10px] overflow-hidden cursor-pointer"
+                      className="relative rounded-[14px] overflow-hidden cursor-pointer"
                       style={{ aspectRatio: "3/4" }}
                     >
                       <Image
@@ -242,7 +246,7 @@ export default function HomePage() {
                       <div className="absolute inset-0 card-gradient" />
 
                       {/* Content at bottom */}
-                      <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+                      <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 z-10">
                         <p className="text-white/55 text-[10px] uppercase tracking-[0.14em] font-semibold mb-1">
                           {tour.tagline}
                         </p>
@@ -252,8 +256,8 @@ export default function HomePage() {
                         >
                           {tour.name}
                         </h3>
-                        <p className="text-white/40 text-[11px] leading-snug">
-                          There will be a small.
+                        <p className="text-white/40 text-[11px] leading-snug line-clamp-2">
+                          {tour.description}
                         </p>
                       </div>
                     </div>
@@ -268,49 +272,69 @@ export default function HomePage() {
             WHY CHOOSE US (Features)
             ============================= */}
         <section
-          className="py-16 md:py-24 px-4 md:px-10 border-t border-white/5"
+          className="py-20 md:py-28 px-4 md:px-10 border-t border-white/5"
           style={{ background: "#111111" }}
         >
           <div className="max-w-[1280px] mx-auto">
             <AnimatedSection className="mb-14 md:mb-16">
-              <span className="section-divider" />
-              <h2
-                className="text-white font-black uppercase tracking-[0.04em] mb-3"
-                style={{ fontSize: "clamp(22px, 3vw, 32px)" }}
-              >
-                Why Travel With Us
-              </h2>
-              <p className="text-white/40 text-[13px] max-w-md leading-relaxed">
-                We combine local expertise, global reach, and genuine passion to craft experiences that stay with you long after you return home.
-              </p>
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-8">
+                <div className="flex-1 min-w-0">
+                  <span className="section-divider" />
+                  <h2
+                    className="text-white font-black uppercase tracking-[0.04em] mb-3"
+                    style={{ fontSize: "clamp(22px, 3vw, 32px)" }}
+                  >
+                    Why Travel With Us
+                  </h2>
+                  <p className="text-white/40 text-[14px] max-w-lg leading-relaxed">
+                    We combine local expertise, global reach, and genuine passion to craft experiences that stay with you long after you return home.
+                  </p>
+                </div>
+                <Link
+                  href="/about"
+                  className="btn btn-secondary btn-sm shrink-0 self-start md:self-auto"
+                >
+                  Learn More
+                  <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </Link>
+              </div>
             </AnimatedSection>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
               {features.map((feature, index) => (
                 <AnimatedSection key={feature.title} delay={index * 0.12}>
-                  <div
-                    className="p-7 rounded-[14px] border border-white/5 hover:border-white/10 transition-all duration-400 group relative overflow-hidden"
-                    style={{ background: "#161616" }}
-                  >
+                  <div className="feature-card-modern group">
                     {/* Red top accent line */}
                     <div
                       className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-                      style={{ background: "#e63030" }}
+                      style={{ background: "linear-gradient(90deg, #e63030, #ff6b6b)" }}
                     />
+                    
+                    {/* Icon */}
                     <div
-                      className="w-11 h-11 rounded-[8px] flex items-center justify-center mb-5"
-                      style={{ background: "rgba(230,48,48,0.12)" }}
+                      className="w-12 h-12 rounded-[10px] flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-105"
+                      style={{ background: "rgba(230,48,48,0.1)", border: "1px solid rgba(230,48,48,0.15)" }}
                     >
                       <span className="material-symbols-outlined text-[22px] fill" style={{ color: "#e63030" }}>
                         {feature.icon}
                       </span>
                     </div>
+
+                    {/* Content */}
                     <h3 className="text-white font-bold text-[15px] uppercase tracking-wide mb-3">
                       {feature.title}
                     </h3>
-                    <p className="text-white/45 text-[13px] leading-relaxed">
+                    <p className="text-white/50 text-[13px] leading-[1.7]">
                       {feature.description}
                     </p>
+
+                    {/* Subtle link */}
+                    <div className="mt-5 pt-4 border-t border-white/5">
+                      <span className="tour-card-link text-[10px] group-hover:gap-3 transition-all">
+                        Explore
+                        <span className="material-symbols-outlined text-[12px]">arrow_forward</span>
+                      </span>
+                    </div>
                   </div>
                 </AnimatedSection>
               ))}
@@ -391,6 +415,12 @@ export default function HomePage() {
                           <span className="material-symbols-outlined text-white text-[16px] fill ml-[1px]">play_arrow</span>
                         </div>
                       </div>
+                      {/* Label overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 z-10 p-3">
+                        <span className="text-white/70 text-[10px] uppercase tracking-[0.12em] font-bold">
+                          {thumb.label}
+                        </span>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -403,30 +433,92 @@ export default function HomePage() {
             STATS BAR
             ============================= */}
         <section
-          className="py-10 md:py-14 px-4 md:px-10 border-t border-b border-white/5"
+          className="py-12 md:py-16 px-4 md:px-10 border-t border-b border-white/5"
           style={{ background: "#0d0d0d" }}
         >
           <div className="max-w-[1280px] mx-auto">
             <AnimatedSection>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:divide-x md:divide-white/8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
                 {[
-                  { value: "50K+", label: "Happy Travelers" },
-                  { value: "120+", label: "Destinations" },
-                  { value: "14+", label: "Years of Experience" },
-                  { value: "4.9★", label: "Average Rating" },
+                  { value: "50K+", label: "Happy Travelers", icon: "group" },
+                  { value: "120+", label: "Destinations", icon: "public" },
+                  { value: "14+", label: "Years of Experience", icon: "workspace_premium" },
+                  { value: "4.9★", label: "Average Rating", icon: "star" },
                 ].map((stat, i) => (
-                  <div key={i} className="flex flex-col gap-1 px-4">
+                  <div
+                    key={i}
+                    className="flex flex-col items-center gap-2 px-4 relative"
+                  >
+                    {/* Vertical divider between items (desktop only) */}
+                    {i > 0 && (
+                      <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-px h-12 bg-white/8" />
+                    )}
+                    <span
+                      className="material-symbols-outlined text-[20px] mb-1 fill"
+                      style={{ color: "#e63030" }}
+                    >
+                      {stat.icon}
+                    </span>
                     <span
                       className="font-black text-white"
                       style={{ fontSize: "clamp(28px, 4vw, 44px)" }}
                     >
                       {stat.value}
                     </span>
-                    <span className="text-white/35 text-[11px] uppercase tracking-[0.14em] font-semibold">
+                    <span className="text-white/35 text-[11px] uppercase tracking-[0.14em] font-semibold text-center">
                       {stat.label}
                     </span>
                   </div>
                 ))}
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
+        {/* =============================
+            NEWSLETTER
+            ============================= */}
+        <section className="py-16 md:py-20 px-4 md:px-10" style={{ background: "#0d0d0d" }}>
+          <div className="max-w-[1280px] mx-auto">
+            <AnimatedSection>
+              <div className="text-center max-w-xl mx-auto">
+                <span className="block mx-auto section-divider" />
+                <h2
+                  className="text-white font-black uppercase tracking-[0.04em] mb-3"
+                  style={{ fontSize: "clamp(20px, 2.5vw, 28px)" }}
+                >
+                  Stay Inspired
+                </h2>
+                <p className="text-white/40 text-[13px] leading-relaxed mb-8">
+                  Get exclusive travel deals, destination guides, and insider tips delivered straight to your inbox.
+                </p>
+                <form
+                  className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
+                  onSubmit={(e) => e.preventDefault()}
+                >
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="flex-1 h-[52px] px-5 rounded-full text-[14px] font-medium text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-[#e63030]/40 transition-all"
+                    style={{
+                      background: "rgba(22,22,22,0.9)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                    }}
+                  />
+                  <button
+                    type="submit"
+                    className="h-[52px] px-8 rounded-full font-bold text-[12px] uppercase tracking-[0.12em] text-white transition-all duration-300 hover:opacity-90 shrink-0"
+                    style={{
+                      background: "#e63030",
+                      boxShadow: "0 4px 20px rgba(230,48,48,0.35)",
+                    }}
+                  >
+                    Subscribe
+                  </button>
+                </form>
+                <p className="text-white/20 text-[11px] mt-4">
+                  No spam, ever. Unsubscribe anytime.
+                </p>
               </div>
             </AnimatedSection>
           </div>
@@ -439,12 +531,20 @@ export default function HomePage() {
           <div className="max-w-[1280px] mx-auto">
             <AnimatedSection>
               <div
-                className="relative rounded-[20px] overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 p-10 md:p-14 border border-white/6"
-                style={{ background: "#161616" }}
+                className="relative rounded-[24px] overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 p-10 md:p-16"
+                style={{
+                  background: "linear-gradient(135deg, #161616 0%, #1a1118 50%, #161616 100%)",
+                  border: "1px solid rgba(255,255,255,0.06)",
+                }}
               >
                 {/* Decorative red glow */}
                 <div
-                  className="absolute top-[-80px] right-[-80px] w-[280px] h-[280px] rounded-full blur-[100px] pointer-events-none opacity-30"
+                  className="absolute top-[-80px] right-[-80px] w-[320px] h-[320px] rounded-full blur-[120px] pointer-events-none opacity-25"
+                  style={{ background: "#e63030" }}
+                />
+                {/* Second decorative glow */}
+                <div
+                  className="absolute bottom-[-60px] left-[-60px] w-[200px] h-[200px] rounded-full blur-[80px] pointer-events-none opacity-10"
                   style={{ background: "#e63030" }}
                 />
 
@@ -457,7 +557,7 @@ export default function HomePage() {
                     The World Is<br />
                     Waiting for You
                   </h2>
-                  <p className="text-white/40 text-[14px] leading-relaxed max-w-[400px]">
+                  <p className="text-white/45 text-[14px] leading-relaxed max-w-[420px]">
                     Join thousands of travelers who trust us to craft extraordinary adventures. Your dream destination is just one click away.
                   </p>
                 </div>
@@ -465,7 +565,7 @@ export default function HomePage() {
                 <div className="relative z-10 flex flex-col gap-4 md:items-end shrink-0">
                   <Link
                     href="/flights"
-                    className="btn btn-primary"
+                    className="btn btn-primary btn-lg"
                   >
                     <span className="material-symbols-outlined text-[17px]">flight_takeoff</span>
                     Book a Flight
