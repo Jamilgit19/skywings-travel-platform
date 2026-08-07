@@ -222,7 +222,7 @@ export default function HomePage() {
                 >
                   Popular Tours
                 </h2>
-                <p className="text-white/45 text-[13px] tracking-wide max-w-md mx-auto">
+                <p className="text-white/45 text-[13px] tracking-wide max-w-[448px] mx-auto">
                   Explore our most sought-after travel experiences, handpicked by our team.
                 </p>
               </div>
@@ -286,7 +286,7 @@ export default function HomePage() {
                   >
                     Why Travel With Us
                   </h2>
-                  <p className="text-white/40 text-[14px] max-w-lg leading-relaxed">
+                  <p className="text-white/40 text-[14px] max-w-[512px] leading-relaxed">
                     We combine local expertise, global reach, and genuine passion to craft experiences that stay with you long after you return home.
                   </p>
                 </div>
@@ -481,7 +481,7 @@ export default function HomePage() {
         <section className="py-16 md:py-20 px-4 md:px-10" style={{ background: "#0d0d0d" }}>
           <div className="max-w-[1280px] mx-auto">
             <AnimatedSection>
-              <div className="text-center max-w-xl mx-auto">
+              <div className="text-center max-w-[576px] mx-auto">
                 <span className="block mx-auto section-divider" />
                 <h2
                   className="text-white font-black uppercase tracking-[0.04em] mb-3"
@@ -493,7 +493,7 @@ export default function HomePage() {
                   Get exclusive travel deals, destination guides, and insider tips delivered straight to your inbox.
                 </p>
                 <form
-                  className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
+                  className="flex flex-col sm:flex-row gap-3 max-w-[512px] mx-auto"
                   onSubmit={(e) => e.preventDefault()}
                 >
                   <input
